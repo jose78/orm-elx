@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Elx</groupId>
+  <artifactId>elx-example</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Elx-example</name>
+  <description>Examples of ORM ELX</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>Elx</groupId>
+  		<artifactId>Elx-connector-derby</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.11</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>log4j</groupId>
+  		<artifactId>log4j</artifactId>
+  		<version>1.2.8</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.derby</groupId>
+  		<artifactId>derbyclient</artifactId>
+  		<version>10.9.1.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>postgresql</groupId>
+  		<artifactId>postgresql</artifactId>
+  		<version>9.1-901-1.jdbc4</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>Elx</groupId>
+  		<artifactId>Elx-connector-mySQL</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>mysql</groupId>
+  		<artifactId>mysql-connector-java</artifactId>
+  		<version>5.1.21</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>Elx</groupId>
+  		<artifactId>Elx-orm</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+  <organization>
+  	<name>Elx Source</name>
+  	<url>http://code.google.com/p/elx-orm</url>
+  </organization>
+  <issueManagement>
+  	<url>http://code.google.com/p/elx-orm/issues/list</url>
+  </issueManagement>
+</project>
