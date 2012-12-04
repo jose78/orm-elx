@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Elx</groupId>
+  <artifactId>Elx-connector-derby</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Elx-connector-derby</name>
+  
+   <dependencies>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.7</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>Elx</groupId>
+			<artifactId>Elx-commons</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>Elx</groupId>
+			<artifactId>Elx-connector</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derbyclient</artifactId>
+			<version>10.8.2.2</version>
+		</dependency>
+   </dependencies>
+  
+  <build>
+  <defaultGoal>install</defaultGoal>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+			<version>2.4</version>
+			<configuration>
+				<useDefaultManifestFile>true</useDefaultManifestFile>
+			</configuration>
+		</plugin>
+	</plugins>
+	</build>
+</project>
