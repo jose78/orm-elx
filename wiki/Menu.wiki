@@ -16,6 +16,8 @@
   * Configuration
    * Connections 
     * {{{@ConnectionDef}}}
+ * DTOś
+    * {{{@DTO}}}
    * Entities
     * [Column @Column]
     * {{{@Connection}}}
