@@ -31,6 +31,13 @@
   	<url>https://orm-elx.googlecode.com/svn/trunk/elx-commons</url>
   	<connection>https://orm-elx.googlecode.com/svn/trunk/elx-commons</connection>
   	<developerConnection>https://orm-elx.googlecode.com/svn/trunk/elx-commons</developerConnection>
-  	<tag>https://orm-elx.googlecode.com/svn/trunk/elx-commons</tag>
+  	<tag>elx-commons</tag>
   </scm>
+  <organization>
+  	<name>Elx Source</name>
+  	<url>http://code.google.com/p/orm-elx/</url>
+  </organization>
+  <issueManagement>
+  	<url>http://code.google.com/p/orm-elx/issues/list</url>
+  </issueManagement>
 </project>
