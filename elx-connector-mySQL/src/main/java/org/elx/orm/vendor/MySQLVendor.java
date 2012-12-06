@@ -120,81 +120,81 @@ public class MySQLVendor extends Vendor {
 		return getConsultByVendor(PropertiesManager.NEXT_SEQUENCE);
 	}
 
-	public ParameterMapper getParameterMapperMySQL() {
-		return new ParameterMapper() {
-
-			@Override
-			public <T> void setParameter(PreparedStatement statement,
-					int index, T obj) throws SQLException {
-
-				com.mysql.jdbc.PreparedStatement mysqlStatement = null;
-
-				Tupla<TypeMySQL, Object> tupla = Utils.getUtil().getTuplaMySql(
-						obj);
-				switch (tupla.getKey()) {
-				case java_lang_Long:
-					statement.setLong(index, (Long) tupla.getValue());
-					break;
-				case java_lang_Double:
-					statement.setDouble(index, (Double) tupla.getValue());
-					break;
-				case java_lang_Integer:
-					statement.setInt(index, (Integer) tupla.getValue());
-					break;
-				case java_util_Date:
-				case java_sql_Date:
-					statement.setDate(index, (java.sql.Date) tupla.getValue());
-					break;
-				case java_lang_Boolean:
-					statement.setBoolean(index, (Boolean) tupla.getValue());
-					break;
-				case java_lang_Float:
-					statement.setFloat(index, (Float) tupla.getValue());
-					break;
-				case java_lang_Byte:
-					statement.setByte(index, (Byte) tupla.getValue());
-					break;
-				case java_lang_Bytes:
-					statement.setBytes(index, (byte[]) tupla.getValue());
-					break;
-				case java_lang_Short:
-					statement.setShort(index, (Short) tupla.getValue());
-					break;
-				case java_lang_String:
-					statement.setString(index, (String) tupla.getValue());
-					break;
-				case java_sql_Time:
-					statement.setTime(index, (Time) tupla.getValue());
-					break;
-				case java_sql_Timestamp:
-					statement.setTimestamp(index, (Timestamp) tupla.getValue());
-					break;
-				case java_sql_Ref:
-					statement.setRef(index, (Ref) tupla.getValue());
-					break;
-				case Object:
-					statement.setObject(index, tupla.getValue());
-					break;
-				case java_sql_Blob:
-					statement.setBlob(index, (Blob) tupla.getValue());
-					break;
-				case java_sql_Clob:
-					statement.setClob(index, (Clob) tupla.getValue());
-					break;
-				case Null:
-					statement.setObject(index, tupla.getValue());
-					break;
-				case com_mysql_jdbc_Blob:
-					mysqlStatement = (com.mysql.jdbc.PreparedStatement) statement;
-					mysqlStatement.setBlob(index,
-							(com.mysql.jdbc.Blob) tupla.getValue());
-				case com_mysql_jdbc_Clob:
-					mysqlStatement = (com.mysql.jdbc.PreparedStatement) statement;
-					mysqlStatement.setClob(index,
-							(com.mysql.jdbc.Clob) tupla.getValue());
-				}
-			}
-		};
-	}
+//	public ParameterMapper getParameterMapperMySQL() {
+//		return new ParameterMapper() {
+//
+//			@Override
+//			public <T> void setParameter(PreparedStatement statement,
+//					int index, T obj) throws SQLException {
+//
+//				com.mysql.jdbc.PreparedStatement mysqlStatement = null;
+//
+//				Tupla<TypeMySQL, Object> tupla = Utils.getUtil().getTuplaMySql(
+//						obj);
+//				switch (tupla.getKey()) {
+//				case java_lang_Long:
+//					statement.setLong(index, (Long) tupla.getValue());
+//					break;
+//				case java_lang_Double:
+//					statement.setDouble(index, (Double) tupla.getValue());
+//					break;
+//				case java_lang_Integer:
+//					statement.setInt(index, (Integer) tupla.getValue());
+//					break;
+//				case java_util_Date:
+//				case java_sql_Date:
+//					statement.setDate(index, (java.sql.Date) tupla.getValue());
+//					break;
+//				case java_lang_Boolean:
+//					statement.setBoolean(index, (Boolean) tupla.getValue());
+//					break;
+//				case java_lang_Float:
+//					statement.setFloat(index, (Float) tupla.getValue());
+//					break;
+//				case java_lang_Byte:
+//					statement.setByte(index, (Byte) tupla.getValue());
+//					break;
+//				case java_lang_Bytes:
+//					statement.setBytes(index, (byte[]) tupla.getValue());
+//					break;
+//				case java_lang_Short:
+//					statement.setShort(index, (Short) tupla.getValue());
+//					break;
+//				case java_lang_String:
+//					statement.setString(index, (String) tupla.getValue());
+//					break;
+//				case java_sql_Time:
+//					statement.setTime(index, (Time) tupla.getValue());
+//					break;
+//				case java_sql_Timestamp:
+//					statement.setTimestamp(index, (Timestamp) tupla.getValue());
+//					break;
+//				case java_sql_Ref:
+//					statement.setRef(index, (Ref) tupla.getValue());
+//					break;
+//				case Object:
+//					statement.setObject(index, tupla.getValue());
+//					break;
+//				case java_sql_Blob:
+//					statement.setBlob(index, (Blob) tupla.getValue());
+//					break;
+//				case java_sql_Clob:
+//					statement.setClob(index, (Clob) tupla.getValue());
+//					break;
+//				case Null:
+//					statement.setObject(index, tupla.getValue());
+//					break;
+//				case com_mysql_jdbc_Blob:
+//					mysqlStatement = (com.mysql.jdbc.PreparedStatement) statement;
+//					mysqlStatement.setBlob(index,
+//							(com.mysql.jdbc.Blob) tupla.getValue());
+//				case com_mysql_jdbc_Clob:
+//					mysqlStatement = (com.mysql.jdbc.PreparedStatement) statement;
+//					mysqlStatement.setClob(index,
+//							(com.mysql.jdbc.Clob) tupla.getValue());
+//				}
+//			}
+//		};
+//	}
 
 }
