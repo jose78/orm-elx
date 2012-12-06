@@ -13,7 +13,7 @@
      * Update
      * Delete
      * Find
-  * Configuration
+  * Annotations
    * Connections 
     * {{{@ConnectionDef}}}
    * DTOś 
