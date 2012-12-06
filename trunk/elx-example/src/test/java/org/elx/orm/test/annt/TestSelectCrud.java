@@ -3,7 +3,6 @@ package org.elx.orm.test.annt;
 import java.util.List;
 import java.util.Set;
 
-
 import org.apache.log4j.Logger;
 import org.elx.orm.GenericTest;
 import org.elx.orm.db.Select;

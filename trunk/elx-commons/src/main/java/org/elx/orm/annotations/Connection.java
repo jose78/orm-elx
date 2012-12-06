@@ -19,9 +19,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.elx.orm.utils.type.SourceVendor;
-
-
 /**
  * This annotation must be used only to associate one Entity with the Connection
  * of dataBase.
@@ -55,7 +52,5 @@ public @interface Connection {
 	 * @return
 	 */
 	String nameStaticMethodConnectionProvider() default "getManagerConncection";
-
-	
 
 }

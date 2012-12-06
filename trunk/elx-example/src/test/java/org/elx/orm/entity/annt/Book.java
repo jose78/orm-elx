@@ -22,8 +22,6 @@ import org.elx.orm.annotations.Tables;
 import org.elx.orm.utils.Entity;
 import org.elx.orm.utils.type.SourceVendor;
 
-import com.mysql.jdbc.Blob;
-
 /**
  * @author jose
  * 
@@ -43,7 +41,6 @@ public class Book implements Entity {
 
 	@Column(name = "bo_mirror1")
 	private byte[] mirror;
-
 
 	/*
 	 * (non-Javadoc)
@@ -79,5 +76,4 @@ public class Book implements Entity {
 		this.mirror = mirror;
 	}
 
-	
 }

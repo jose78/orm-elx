@@ -20,8 +20,5 @@ package org.elx.orm.utils.type;
  * 
  */
 public enum TypeMySQL {
-	Null, java_lang_Long, java_lang_Double, java_lang_Integer, java_util_Date, java_sql_Date, 
-	java_lang_Boolean, java_lang_Float, java_lang_Byte, java_lang_Bytes, java_lang_Short, 
-	java_lang_String, java_sql_Time, java_sql_Timestamp, java_sql_Ref, Object, java_sql_Blob, java_sql_Clob,
-	com_mysql_jdbc_Clob, com_mysql_jdbc_Blob
+	Null, java_lang_Long, java_lang_Double, java_lang_Integer, java_util_Date, java_sql_Date, java_lang_Boolean, java_lang_Float, java_lang_Byte, java_lang_Bytes, java_lang_Short, java_lang_String, java_sql_Time, java_sql_Timestamp, java_sql_Ref, Object, java_sql_Blob, java_sql_Clob, com_mysql_jdbc_Clob, com_mysql_jdbc_Blob
 }

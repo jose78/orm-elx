@@ -16,7 +16,6 @@ package org.elx.orm;
 
 import java.net.URL;
 
-
 import org.elx.orm.annotations.Connection;
 import org.elx.orm.annotations.ConnectionDef;
 import org.junit.Test;
@@ -24,26 +23,27 @@ import org.scannotation.AnnotationDB;
 import org.scannotation.ClasspathUrlFinder;
 
 /**
- * @author Jose Clavero Anderica
- *         jose.clavero.anderica@gmail.com
- *
+ * @author Jose Clavero Anderica jose.clavero.anderica@gmail.com
+ * 
  */
 public class TestScaner {
 
-	
 	@Test
 	public void testScan() throws Exception {
-		
-		URL[] urls = ClasspathUrlFinder.findClassPaths(); // scan java.class.path
+
+		URL[] urls = ClasspathUrlFinder.findClassPaths(); // scan
+															// java.class.path
 		AnnotationDB db = new AnnotationDB();
 		db.scanArchives(urls);
-		for (String value : db.getAnnotationIndex().get(Connection.class.getName())) {
-			System.out.println("Entity:"+value);
+		for (String value : db.getAnnotationIndex().get(
+				Connection.class.getName())) {
+			System.out.println("Entity:" + value);
 		}
-		for (String value : db.getAnnotationIndex().get(ConnectionDef.class.getName())) {
-			System.out.println("Conection:"+value);
+		for (String value : db.getAnnotationIndex().get(
+				ConnectionDef.class.getName())) {
+			System.out.println("Conection:" + value);
 		}
-		
+
 	}
-	
+
 }

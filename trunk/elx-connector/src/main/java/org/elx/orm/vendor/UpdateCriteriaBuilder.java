@@ -16,19 +16,16 @@ package org.elx.orm.vendor;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map.Entry;
 
 import org.elx.orm.annotations.Column;
 import org.elx.orm.annotations.Validation;
-import org.elx.orm.db.Criteria;
 import org.elx.orm.utils.Entity;
 import org.elx.orm.utils.Utils;
 import org.elx.orm.utils.type.TypeOperation;
 import org.elx.orm.validate.ElxValidateException;
 import org.elx.orm.validate.ValidateEntity;
-
 
 /**
  * 
@@ -40,7 +37,6 @@ class UpdateCriteriaBuilder extends AbstractCriteriaBuilder {
 	private List<Object> lstParams = new ArrayList<Object>();
 	StringBuilder sbUpdate = new StringBuilder();
 
-
 	protected <T extends Entity> UpdateCriteriaBuilder(T entity,
 			String nameConnection) throws ElxValidateException {
 		super(entity.getClass(), TypeOperation.Update);
@@ -51,16 +47,18 @@ class UpdateCriteriaBuilder extends AbstractCriteriaBuilder {
 		String separator = "";
 		for (Entry<String, Field> entry : getDataClass()
 				.getMapNameColumnsField().entrySet()) {
-			
-			Validation anntValidation= null;
+
+			Validation anntValidation = null;
 			Column anntColumn = null;
 			Object value = null;
 			if ((anntColumn = entry.getValue().getAnnotation(Column.class)) != null
 					&& anntColumn.updatable()) {
-				
-				anntValidation = entry.getValue().getAnnotation(Validation.class); 
-				
-				ValidateEntity.get().validateField(anntValidation, entry.getValue(), entity);
+
+				anntValidation = entry.getValue().getAnnotation(
+						Validation.class);
+
+				ValidateEntity.get().validateField(anntValidation,
+						entry.getValue(), entity);
 				value = Utils.getUtil().getValueField(entity, entry.getValue());
 				sbUpdate.append(separator).append(entry.getKey())
 						.append(Constant.STR_EQUALS)

@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import org.apache.log4j.Logger;
 import org.elx.orm.GenericTest;
 import org.elx.orm.annotations.Table;
@@ -62,7 +61,7 @@ public class TestCrudFK extends GenericTest {
 
 			}
 		} catch (SQLException e) {
-			log.error(e.getMessage(),e);
+			log.error(e.getMessage(), e);
 			SessionConncection.getManagerConncection().rollbackAll();
 		}
 

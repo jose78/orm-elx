@@ -22,7 +22,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
-
 import org.apache.log4j.Logger;
 import org.elx.orm.annotations.ConnectionDef;
 import org.elx.orm.annotations.Id;
@@ -56,16 +55,16 @@ public abstract class AbstractConncection {
 
 	public void executeTest() throws SQLException {
 		getConnection();
-		 log.info("Connection:" + nameConnection + " -> START OK");
+		log.info("Connection:" + nameConnection + " -> START OK");
 		getVendor();
 		close();
-		 log.info("Connection:" + nameConnection + " -> CLOSE OK");
+		log.info("Connection:" + nameConnection + " -> CLOSE OK");
 	}
 
 	public ResultSet executeSelect(String select, ParameterMapper mapper,
 			List<Object> objects) throws SQLException {
 
-		 log.info("QUERY:" + select);
+		log.info("QUERY:" + select);
 		PreparedStatement statement = getConnection().prepareStatement(select);
 		for (int index = 1; index <= objects.size(); index++) {
 			mapper.setParameter(statement, index, objects.get(index - 1));
@@ -76,7 +75,7 @@ public abstract class AbstractConncection {
 
 	public ResultSet executeSelect(String select, ParameterMapper mapper,
 			Object... objects) throws SQLException {
-		 log.info("Query:[" + select + "]");
+		log.info("Query:[" + select + "]");
 		PreparedStatement statement = getConnection().prepareStatement(select);
 
 		if (objects != null) {
@@ -99,7 +98,8 @@ public abstract class AbstractConncection {
 		if (closeCnx) {
 			cont++;
 			tmp = get();
-			 log.info(" *** YOU HAVE CREATED A NEW CONNECTION¡¡¡¡ [" + contMain	+ "," + cont + "]--> " + getName());
+			log.info(" *** YOU HAVE CREATED A NEW CONNECTION¡¡¡¡ [" + contMain
+					+ "," + cont + "]--> " + getName());
 		} else {
 			tmp = cnx;
 		}
@@ -126,7 +126,8 @@ public abstract class AbstractConncection {
 
 		final String strCobnsult = sqlExecuteSequence.replace("$PARAM",
 				strNameSeq);
-		 log.info("Connection:[" + getName() + "] - Query:[ " + strCobnsult	+ "]");
+		log.info("Connection:[" + getName() + "] - Query:[ " + strCobnsult
+				+ "]");
 		final PreparedStatement statement = cnx.prepareStatement(strCobnsult);
 		final ResultSet rs = statement.executeQuery();
 		while (rs.next()) {
@@ -151,7 +152,7 @@ public abstract class AbstractConncection {
 	protected Integer executeInsert(Entity entity, String sql,
 			ParameterMapper parameterMapper, List<Object> parameter)
 			throws SQLException {
-		 log.info("Connection:[" + nameConnection + "] - Query:[" + sql + "]");
+		log.info("Connection:[" + nameConnection + "] - Query:[" + sql + "]");
 
 		PreparedStatement statement = null;
 
@@ -190,13 +191,13 @@ public abstract class AbstractConncection {
 	public Integer execute(String sql, ParameterMapper parameterMapper,
 			List<Object> parameter) throws SQLException {
 
-		 log.info("Query:[" + sql + "]");
+		log.info("Query:[" + sql + "]");
 
 		PreparedStatement statement = getConnection().prepareStatement(sql);
 
 		for (int index = 0; index < parameter.size(); index++) {
-			parameterMapper
-					.setParameter(statement, index+1, parameter.get(index));
+			parameterMapper.setParameter(statement, index + 1,
+					parameter.get(index));
 		}
 
 		Integer numRows = null;

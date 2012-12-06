@@ -24,14 +24,12 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 
-
 import org.apache.log4j.Logger;
 import org.elx.orm.annotations.Connection;
 import org.elx.orm.annotations.ConnectionDef;
 import org.elx.orm.annotations.Connections;
 import org.elx.orm.annotations.Table;
 import org.elx.orm.annotations.Tables;
-import org.elx.orm.db.Select;
 import org.elx.orm.utils.CacheClass;
 import org.elx.orm.utils.ElxGenericException;
 import org.elx.orm.utils.Utils;
@@ -70,7 +68,7 @@ public class ManagerConncection {
 				db.scanArchives(urls);
 			} catch (IOException e1) {
 				throw new ElxGenericException(e1.getMessage());
-			}catch (Throwable e) {
+			} catch (Throwable e) {
 				e.printStackTrace();
 			}
 
@@ -237,13 +235,16 @@ public class ManagerConncection {
 		return containerInstances.values();
 	}
 
-	public Result execute(Select select, String... connections) throws SQLException {
-		Result result= new Result(); 
+	public Result execute(Select select, String... connections)
+			throws SQLException {
+		Result result = new Result();
 		for (String nameCnx : connections) {
-			PreparedStatement preparedStatement= get(nameCnx).getConnection().prepareStatement(select.getQuery());
-			for (int index = 0; index < select.getParameters().length; index++) {				
-				preparedStatement.setObject(index+1 , select.getParameters()[0]);
-				result.addResult(nameCnx,preparedStatement.executeUpdate());
+			PreparedStatement preparedStatement = get(nameCnx).getConnection()
+					.prepareStatement(select.getQuery());
+			for (int index = 0; index < select.getParameters().length; index++) {
+				preparedStatement.setObject(index + 1,
+						select.getParameters()[0]);
+				result.addResult(nameCnx, preparedStatement.executeUpdate());
 			}
 		}
 		return result;

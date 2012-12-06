@@ -31,8 +31,6 @@ import org.elx.orm.utils.type.SourceVendor;
 @Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Entity {
-	
-	
-	
+
 	SourceVendor vendorSource() default SourceVendor.Java;
 }

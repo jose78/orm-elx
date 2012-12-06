@@ -15,15 +15,12 @@
 package org.elx.orm.vendor;
 
 import java.lang.reflect.Field;
-import java.util.Arrays;
 import java.util.Map.Entry;
 
-import org.elx.orm.db.Criteria;
 import org.elx.orm.utils.ElxGenericException;
 import org.elx.orm.utils.Entity;
 import org.elx.orm.utils.Utils;
 import org.elx.orm.utils.type.TypeOperation;
-
 
 /**
  * This class contain the logic and methods necessary for build the query of
@@ -36,7 +33,6 @@ import org.elx.orm.utils.type.TypeOperation;
  */
 class DeleteCriteriaBuilder extends AbstractCriteriaBuilder {
 
-	
 	/**
 	 * This constructor will generate the query delete from entity ID.
 	 * 
@@ -61,7 +57,8 @@ class DeleteCriteriaBuilder extends AbstractCriteriaBuilder {
 					.append(Constant.STR_EQUALS).append(Constant.STR_PARAMS);
 
 			// Add the parameter to list.
-			getListParameters().add(Utils.getUtil().getValueField(entity, entry.getValue()));
+			getListParameters().add(
+					Utils.getUtil().getValueField(entity, entry.getValue()));
 
 			separator = Constant.STR_AND;
 		}

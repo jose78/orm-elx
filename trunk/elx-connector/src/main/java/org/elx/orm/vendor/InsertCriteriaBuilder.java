@@ -25,7 +25,6 @@ import org.elx.orm.utils.type.TypeOperation;
 import org.elx.orm.validate.ElxValidateException;
 import org.elx.orm.validate.ValidateEntity;
 
-
 /**
  * This class contain the logic and methods necessary for build the query of
  * Insert.
@@ -50,10 +49,13 @@ class InsertCriteriaBuilder extends AbstractCriteriaBuilder {
 
 			Column anntColumn = null;
 			Validation anntValidation = null;
-			if ((anntColumn = entry.getValue().getAnnotation(Column.class)) != null && anntColumn.insertable()) {
-				anntValidation = entry.getValue().getAnnotation(Validation.class);
-				ValidateEntity.get().validateField(anntValidation, entry.getValue(), entity);
-				
+			if ((anntColumn = entry.getValue().getAnnotation(Column.class)) != null
+					&& anntColumn.insertable()) {
+				anntValidation = entry.getValue().getAnnotation(
+						Validation.class);
+				ValidateEntity.get().validateField(anntValidation,
+						entry.getValue(), entity);
+
 				strColumns.append(separator).append(entry.getKey());
 				strParams.append(separator).append(Constant.STR_PARAMS);
 				getListParameters()
@@ -63,7 +65,7 @@ class InsertCriteriaBuilder extends AbstractCriteriaBuilder {
 			}
 		}
 
-		String schema =  getDataClass().getNameSchema(nameConnection);
+		String schema = getDataClass().getNameSchema(nameConnection);
 
 		setSql(new StringBuilder().append(Constant.STR_INSERT_INTO)
 				.append(schema)

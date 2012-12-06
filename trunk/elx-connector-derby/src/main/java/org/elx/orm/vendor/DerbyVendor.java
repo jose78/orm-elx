@@ -19,9 +19,6 @@ import java.net.URL;
 import java.util.Properties;
 
 import org.elx.orm.utils.type.SourceVendor;
-import org.elx.orm.vendor.PropertiesManager;
-import org.elx.orm.vendor.Vendor;
-
 
 /**
  * @author Jose Clavero Anderica jose.clavero.anderica@gmail.com
@@ -30,7 +27,7 @@ import org.elx.orm.vendor.Vendor;
 public class DerbyVendor extends Vendor {
 
 	public DerbyVendor(SourceVendor typeVendor) {
-		super(typeVendor);	
+		super(typeVendor);
 	}
 
 	private static Properties properties = null;

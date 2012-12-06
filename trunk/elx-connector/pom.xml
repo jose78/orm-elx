@@ -36,4 +36,17 @@
 		</plugin>
 	</plugins>
 	</build>
+  <scm>
+  	<url>https://orm-elx.googlecode.com/svn/trunk/elx-connector</url>
+  	<connection>https://orm-elx.googlecode.com/svn/trunk/elx-connector</connection>
+  	<developerConnection>https://orm-elx.googlecode.com/svn/trunk/elx-connector</developerConnection>
+  	<tag>elx-connector</tag>
+  </scm>
+    <organization>
+  	<name>Elx Source</name>
+  	<url>http://code.google.com/p/orm-elx/</url>
+  </organization>
+  <issueManagement>
+  	<url>http://code.google.com/p/orm-elx/issues/list</url>
+  </issueManagement>
 </project>

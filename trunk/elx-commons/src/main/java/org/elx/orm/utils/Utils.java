@@ -85,16 +85,17 @@ public class Utils {
 		if (value == null) {
 			key = TypeJava.Null;
 		} else {
-			if(value.getClass().isArray() && "byte[]".equals(value.getClass().getCanonicalName())){
+			if (value.getClass().isArray()
+					&& "byte[]".equals(value.getClass().getCanonicalName())) {
 				key = TypeJava.java_lang_Bytes;
-			}else{
-			for (final TypeJava type : TypeJava.values()) {
-				if (type.toString().equals(
-						value.getClass().getName().replace(".", "_"))) {
-					key = type;
-					break;
+			} else {
+				for (final TypeJava type : TypeJava.values()) {
+					if (type.toString().equals(
+							value.getClass().getName().replace(".", "_"))) {
+						key = type;
+						break;
+					}
 				}
-			}
 			}
 		}
 		return new Tupla<TypeJava, Object>(key, value);

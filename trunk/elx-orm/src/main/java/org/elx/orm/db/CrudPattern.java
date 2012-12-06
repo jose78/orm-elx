@@ -17,12 +17,9 @@ package org.elx.orm.db;
 import java.sql.SQLException;
 import java.util.Collection;
 
-import org.elx.orm.db.Criteria;
-import org.elx.orm.db.Select;
 import org.elx.orm.utils.ElxGenericException;
 import org.elx.orm.utils.Entity;
 import org.elx.orm.validate.ElxValidateException;
-
 
 /**
  * 
@@ -30,8 +27,6 @@ import org.elx.orm.validate.ElxValidateException;
  * 
  */
 public interface CrudPattern {
-
-	
 
 	/**
 	 * This method delete the entity
@@ -57,7 +52,7 @@ public interface CrudPattern {
 	 * @return
 	 * @throws SQLException
 	 * @throws ElxGenericException
-	 * @throws ElxValidateException 
+	 * @throws ElxValidateException
 	 */
 	public abstract <T extends Entity> Integer insert(T entity)
 			throws SQLException, ElxGenericException, ElxValidateException;
@@ -69,9 +64,10 @@ public interface CrudPattern {
 	 *            This class must be contained the values to update.
 	 * @return
 	 * @throws ElxGenericException
-	 * @throws ElxValidateException 
+	 * @throws ElxValidateException
 	 */
-	public abstract <T extends Entity> Integer update(T entity) throws ElxGenericException, SQLException, ElxValidateException;
+	public abstract <T extends Entity> Integer update(T entity)
+			throws ElxGenericException, SQLException, ElxValidateException;
 
 	/**
 	 * @param level
