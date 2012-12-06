@@ -18,14 +18,15 @@
     * {{{@ConnectionDef}}}
    * DTOś 
     * {{{@DTO}}}
-   * Entities
-    * [Column @Column]
     * {{{@Connection}}}
     * {{{@Connections}}}
+   * Entities
+    * [Column @Column]
     * {{{@DateAsString}}}
     * {{{@Id}}}
     * [Reference @Reference]
     * [Table @Table]
+     * {{{@Connection}}}
     * [Tables @Tables]
     * {{{@Validation}}}  
  * Databases supported
