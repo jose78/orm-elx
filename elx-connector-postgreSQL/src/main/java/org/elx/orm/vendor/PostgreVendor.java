@@ -16,23 +16,9 @@ package org.elx.orm.vendor;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Blob;
-import java.sql.Clob;
-import java.sql.PreparedStatement;
-import java.sql.Ref;
-import java.sql.SQLException;
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.util.Properties;
 
-import org.elx.orm.mapper.ParameterMapper;
-import org.elx.orm.utils.Tupla;
-import org.elx.orm.utils.Utils;
 import org.elx.orm.utils.type.SourceVendor;
-import org.elx.orm.utils.type.TypeJava;
-import org.elx.orm.vendor.PropertiesManager;
-import org.elx.orm.vendor.Vendor;
-
 
 /**
  * @author Jose Clavero Anderica jose.clavero.anderica@gmail.com
@@ -123,7 +109,5 @@ public class PostgreVendor extends Vendor {
 		return getConsultByVendor(PropertiesManager.NEXT_SEQUENCE);
 
 	}
-	
-	
 
 }

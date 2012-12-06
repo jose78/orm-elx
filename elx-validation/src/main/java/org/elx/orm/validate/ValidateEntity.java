@@ -59,7 +59,8 @@ public class ValidateEntity {
 	private void transfortmateToTrim(Validation anntValidation, Field field,
 			Object obj) throws ElxValidateException {
 		String value = null;
-		if (anntValidation.toTrim() && (value = Utils.getUtil().getValueField(obj, field)) != null) {
+		if (anntValidation.toTrim()
+				&& (value = Utils.getUtil().getValueField(obj, field)) != null) {
 			Utils.getUtil().setValueField(obj, field, value.trim());
 		}
 	}
@@ -72,7 +73,8 @@ public class ValidateEntity {
 	private void transfortmateToUppercase(Validation anntValidation,
 			Field field, Object obj) throws ElxValidateException {
 		String value = null;
-		if (anntValidation.toUppercase() && (value = Utils.getUtil().getValueField(obj, field)) != null) {
+		if (anntValidation.toUppercase()
+				&& (value = Utils.getUtil().getValueField(obj, field)) != null) {
 			Utils.getUtil().setValueField(obj, field, value.toUpperCase());
 		}
 	}
@@ -85,7 +87,8 @@ public class ValidateEntity {
 	private void transfortmateToLowercase(Validation anntValidation,
 			Field field, Object obj) throws ElxValidateException {
 		String value = null;
-		if (anntValidation.toLowercase() && (value = Utils.getUtil().getValueField(obj, field)) != null) {
+		if (anntValidation.toLowercase()
+				&& (value = Utils.getUtil().getValueField(obj, field)) != null) {
 			Utils.getUtil().setValueField(obj, field, value.toLowerCase());
 		}
 	}
@@ -99,13 +102,15 @@ public class ValidateEntity {
 	private void validateContains(Validation anntValidation, Field field,
 			Object obj) throws ElxValidateException {
 		String value = null;
-		if (!anntValidation.contains()[0].equals("") &&  anntValidation.contains().length > 0
+		if (!anntValidation.contains()[0].equals("")
+				&& anntValidation.contains().length > 0
 				&& (value = Utils.getUtil().getValueField(obj, field)) != null) {
 			Boolean isContained = false;
 			for (int index = 0; !isContained
 					&& index < anntValidation.contains().length; index++) {
-				isContained = isContained || (anntValidation.contains()[index] + "")
-						.equals(value + "");
+				isContained = isContained
+						|| (anntValidation.contains()[index] + "").equals(value
+								+ "");
 			}
 			if (!isContained) {
 				final String cause = "The value doesn't contain any value valid";
@@ -145,11 +150,13 @@ public class ValidateEntity {
 	private void validateEndWith(Validation anntValidation, Field field,
 			Object obj) throws ElxValidateException {
 		String value = null;
-		if (!anntValidation.endWith()[0].equals("") &&  anntValidation.endWith().length > 0
+		if (!anntValidation.endWith()[0].equals("")
+				&& anntValidation.endWith().length > 0
 				&& (value = Utils.getUtil().getValueField(obj, field)) != null) {
 			Boolean isContained = false;
 			for (int index = 0; index < anntValidation.endWith().length; index++) {
-				isContained = isContained || value.endsWith(anntValidation.endWith()[index]);
+				isContained = isContained
+						|| value.endsWith(anntValidation.endWith()[index]);
 			}
 			if (!isContained) {
 				final String cause = "The value doesn't end with any value valid";

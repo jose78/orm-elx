@@ -20,7 +20,6 @@ import java.util.List;
 import org.elx.orm.utils.Entity;
 import org.elx.orm.utils.type.TypeOperation;
 
-
 /**
  * 
  * @author Jose Clavero Anderica jose.clavero.anderica@gmail.com
@@ -32,14 +31,12 @@ abstract class AbstractCriteriaBuilder {
 	private StringBuilder sbSql = null;
 	private ContainerDataClass dataClass = null;
 
-
 	protected <T extends Entity> AbstractCriteriaBuilder(Class<T> clazz,
 			TypeOperation typeOperation) {
 		dataClass = new ContainerDataClass(clazz, typeOperation);
 		lstParameters = new ArrayList<Object>();
 	}
 
-	
 	public void setSql(StringBuilder sbSql) {
 		this.sbSql = sbSql;
 	}

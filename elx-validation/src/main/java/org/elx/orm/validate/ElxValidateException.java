@@ -16,9 +16,6 @@ package org.elx.orm.validate;
 
 import java.lang.reflect.Field;
 
-import org.elx.orm.annotations.Validation;
-
-
 /**
  * @author Jose Clavero Anderica jose.clavero.anderica@gmail.com
  * 
@@ -29,8 +26,6 @@ public class ElxValidateException extends Exception {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-
 
 	/**
 	 * @param message
@@ -58,6 +53,7 @@ public class ElxValidateException extends Exception {
 	}
 
 	public ElxValidateException(Field field, Object obj, String cause) {
-		super("Error in "+obj.getClass().getName()+"."+field.getName()+" --> "+cause);
+		super("Error in " + obj.getClass().getName() + "." + field.getName()
+				+ " --> " + cause);
 	}
 }

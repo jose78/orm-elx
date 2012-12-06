@@ -35,8 +35,8 @@ import org.elx.orm.utils.ElxGenericException;
 import org.elx.orm.utils.Entity;
 import org.elx.orm.utils.Tupla;
 import org.elx.orm.utils.Utils;
-import org.elx.orm.utils.type.TypeJava;
 import org.elx.orm.utils.type.SourceVendor;
+import org.elx.orm.utils.type.TypeJava;
 import org.elx.orm.validate.ElxValidateException;
 
 /**
@@ -48,16 +48,16 @@ public abstract class Vendor {
 
 	private static Logger log = Logger.getLogger(Vendor.class);
 
-	private SourceVendor typeVendor= null;
-	
+	private SourceVendor typeVendor = null;
+
 	public Vendor(SourceVendor typeVendor) {
 		this.typeVendor = typeVendor;
 	}
-	
+
 	private AbstractCriteriaBuilder abstractCriteria = null;
 
-	public void buildUpdate(Entity entity, String nameConnection
-			) throws ElxValidateException {
+	public void buildUpdate(Entity entity, String nameConnection)
+			throws ElxValidateException {
 		abstractCriteria = new UpdateCriteriaBuilder(entity, nameConnection);
 	}
 
@@ -65,7 +65,8 @@ public abstract class Vendor {
 		abstractCriteria = new DeleteCriteriaBuilder(entity, nameConnection);
 	}
 
-	public void buildInsert(Entity entity, String nameConnection) throws ElxValidateException {
+	public void buildInsert(Entity entity, String nameConnection)
+			throws ElxValidateException {
 		abstractCriteria = new InsertCriteriaBuilder(entity, nameConnection);
 	}
 
@@ -110,7 +111,6 @@ public abstract class Vendor {
 		return lstResul;
 	}
 
-	
 	/**
 	 * Get all data of the execution of the <b>SELECT</b>.
 	 * 
@@ -143,7 +143,7 @@ public abstract class Vendor {
 
 		public <T> void setParameter(PreparedStatement statement, int index,
 				T obj) throws SQLException {
-			
+
 			Tupla<TypeJava, Object> tupla = Utils.getUtil().getTupla(obj);
 			switch (tupla.getKey()) {
 			case java_lang_Long:
@@ -185,7 +185,7 @@ public abstract class Vendor {
 				break;
 			case java_sql_Ref:
 				statement.setRef(index, (Ref) tupla.getValue());
-				break;			
+				break;
 			case java_sql_Blob:
 				statement.setBlob(index, (Blob) tupla.getValue());
 				break;
@@ -200,15 +200,17 @@ public abstract class Vendor {
 		}
 	};
 
-	final public ParameterMapper getParameterMapper(final SourceVendor typeVendor) {
+	final public ParameterMapper getParameterMapper(
+			final SourceVendor typeVendor) {
 		ParameterMapper mapper = null;
-		
-//		if (typeVendor == SourceVendor.Java || this.typeVendor != typeVendor){
-			mapper=  PARAMETER_MAPPER;	
-//		}else{
-//			String nameMethod= "getParameterMapper"+typeVendor.toString();
-//			mapper = Utils.getUtil().executeMethod(this, nameMethod );
-//		}		
+
+		// if (typeVendor == SourceVendor.Java || this.typeVendor !=
+		// typeVendor){
+		mapper = PARAMETER_MAPPER;
+		// }else{
+		// String nameMethod= "getParameterMapper"+typeVendor.toString();
+		// mapper = Utils.getUtil().executeMethod(this, nameMethod );
+		// }
 		return mapper;
 	}
 

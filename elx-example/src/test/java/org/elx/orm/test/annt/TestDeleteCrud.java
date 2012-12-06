@@ -2,7 +2,6 @@ package org.elx.orm.test.annt;
 
 import java.util.List;
 
-
 import org.apache.log4j.Logger;
 import org.elx.orm.GenericTest;
 import org.elx.orm.db.Criteria;
@@ -17,12 +16,13 @@ public class TestDeleteCrud extends GenericTest {
 	@Test
 	public void testDelete() throws Exception {
 		try {
-			List<TblAddress> lstResult= getCrud().find(TblAddress.class, 0, new Criteria());
-			
-			TblAddress entity= lstResult.get(0);
-			
+			List<TblAddress> lstResult = getCrud().find(TblAddress.class, 0,
+					new Criteria());
+
+			TblAddress entity = lstResult.get(0);
+
 			getCrud().delete(entity);
-			
+
 			SessionConncection.getManagerConncection().closeAll();
 		} catch (final Throwable e) {
 			log.error(e.getMessage(), e);

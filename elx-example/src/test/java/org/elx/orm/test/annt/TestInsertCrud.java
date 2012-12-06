@@ -1,6 +1,5 @@
 package org.elx.orm.test.annt;
 
-
 import org.apache.log4j.Logger;
 import org.elx.orm.GenericTest;
 import org.elx.orm.db.Crud;
@@ -20,13 +19,12 @@ public class TestInsertCrud extends GenericTest {
 	public void testSimpleInsert() throws Exception {
 		// OK
 
-		
 		try {
 			for (int indexJ = 1; indexJ < 4; indexJ++) {
 				final TblAddress addressComp = this.createAddress();
 				this.getCrud().insert(addressComp);
 				Long idAddresComp = addressComp.getIdAddress();
-//				 Long idAddresComp= null;
+				// Long idAddresComp= null;
 				final TblCompany company = this.createCompany(idAddresComp);
 				this.getCrud().insert(company);
 
@@ -39,7 +37,8 @@ public class TestInsertCrud extends GenericTest {
 
 					final long idAdd = addressEmp.getIdAddress();
 
-					final TblEmployee employee = this.createEmployee(idCompany,idAdd);
+					final TblEmployee employee = this.createEmployee(idCompany,
+							idAdd);
 					this.getCrud().insert(employee);
 					log.debug(employee);
 				}
@@ -84,12 +83,11 @@ public class TestInsertCrud extends GenericTest {
 		SessionConncection.getManagerConncection().commitAll();
 	}
 
-	
 	@Test
 	public void createTestInstertEntity() throws Exception {
 		// OK
 		try {
-			TblAddress address= new TblAddress();
+			TblAddress address = new TblAddress();
 			address.setCity("CITY:madrid.");
 			address.setName("NAME:PaLo BaJO.");
 			address.setState("STATE:YO_misMO.");
@@ -102,17 +100,16 @@ public class TestInsertCrud extends GenericTest {
 		}
 		SessionConncection.getManagerConncection().commitAll();
 	}
-	
-	
+
 	@Test
 	public void createTestInstertBook() throws Exception {
 		// OK
 		try {
 			Book book = new Book();
-			
-			StringBuilder sb= new StringBuilder();
+
+			StringBuilder sb = new StringBuilder();
 			sb.append("HELLO WORLD");
-			
+
 			book.setMirror_1(sb.toString().getBytes());
 			book.setTittle("TEST");
 			log.debug(book);
@@ -124,5 +121,5 @@ public class TestInsertCrud extends GenericTest {
 		}
 		SessionConncection.getManagerConncection().commitAll();
 	}
-	
+
 }

@@ -42,4 +42,17 @@
 		</plugin>
 	</plugins>
 	</build>
+  <scm>
+  	<url>https://orm-elx.googlecode.com/svn/trunk/elx-connector-mySQL</url>
+  	<connection>https://orm-elx.googlecode.com/svn/trunk/elx-connector-mySQL</connection>
+  	<developerConnection>https://orm-elx.googlecode.com/svn/trunk/elx-connector-mySQL</developerConnection>
+  	<tag>elx-connector-mySQL</tag>
+  </scm>
+  <organization>
+  	<name>Elx Source</name>
+  	<url>http://code.google.com/p/orm-elx/</url>
+  </organization>
+  <issueManagement>
+  	<url>http://code.google.com/p/orm-elx/issues/list</url>
+  </issueManagement>
 </project>

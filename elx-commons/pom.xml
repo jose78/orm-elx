@@ -27,4 +27,10 @@
 		</plugin>
 	</plugins>
 	</build>
+  <scm>
+  	<url>https://orm-elx.googlecode.com/svn/trunk/elx-commons</url>
+  	<connection>https://orm-elx.googlecode.com/svn/trunk/elx-commons</connection>
+  	<developerConnection>https://orm-elx.googlecode.com/svn/trunk/elx-commons</developerConnection>
+  	<tag>https://orm-elx.googlecode.com/svn/trunk/elx-commons</tag>
+  </scm>
 </project>

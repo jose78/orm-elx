@@ -25,10 +25,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 
-import org.elx.orm.annotations.Column;
 import org.elx.orm.annotations.Id;
 import org.elx.orm.annotations.Reference;
 import org.elx.orm.annotations.Validation;
@@ -39,7 +38,6 @@ import org.elx.orm.utils.Utils;
 import org.elx.orm.utils.type.TypeOperation;
 import org.elx.orm.vendor.ContainerDataClass;
 import org.elx.orm.vendor.Vendor;
-
 
 public class Reader<E extends Entity> {
 
@@ -102,9 +100,9 @@ public class Reader<E extends Entity> {
 		String nameTable = containerDataClass.getNameTable(nameConnection);
 		String nameSchema = containerDataClass.getNameSchema(nameConnection);
 
-		query = new QueryBuilder(vendor, nameTable, nameSchema, cont.getValue(),
-				nameColumnTo, aliasTableFrom, nameColumnFrom, nameTableFrom,
-				isOneToOne);
+		query = new QueryBuilder(vendor, nameTable, nameSchema,
+				cont.getValue(), nameColumnTo, aliasTableFrom, nameColumnFrom,
+				nameTableFrom, isOneToOne);
 
 		for (Entry<String, Field> entry : containerDataClass
 				.getMapNameColumnsField().entrySet()) {
@@ -112,9 +110,9 @@ public class Reader<E extends Entity> {
 				query.addColumnId(entry.getKey(), entry.getValue()
 						.getAnnotation(Validation.class));
 			} else {
-			
+
 				Validation anntValidation = entry.getValue().getAnnotation(
-						Validation.class);				
+						Validation.class);
 				query.addColumn(entry.getKey(), anntValidation);
 			}
 		}
@@ -167,9 +165,9 @@ public class Reader<E extends Entity> {
 				query.addColumnId(entry.getKey(), entry.getValue()
 						.getAnnotation(Validation.class));
 			} else {
-				
+
 				Validation anntValidation = entry.getValue().getAnnotation(
-						Validation.class);				
+						Validation.class);
 				query.addColumn(entry.getKey(), anntValidation);
 			}
 		}
@@ -366,11 +364,12 @@ class Cont {
 	}
 
 }
+
 class QueryBuilder {
 
-	final private static String STR_SPACE = "\n      "; 
+	final private static String STR_SPACE = "\n      ";
 	private static Integer contCoreColumns = 0;
-	
+
 	private List<String> lstColumnsWhere = null;
 	private List<String> lstColumnsOrderBy = null;
 	private Map<String, String> lstColumsRS = null;
@@ -403,10 +402,9 @@ class QueryBuilder {
 		this.nameSchema = nameSchema;
 		this.nameTable = nameTable;
 		aliasTable = "entity";
-//		aliasTable = "at_" + valueRandom + "_" + contTable;
+		// aliasTable = "at_" + valueRandom + "_" + contTable;
 		aliasColumn = "ac_" + valueRandom + "_" + contTable;
-		lstTables.add(STR_SPACE + nameSchema + nameTable + " "
-				+ aliasTable);
+		lstTables.add(STR_SPACE + nameSchema + nameTable + " " + aliasTable);
 
 		contCoreColumns++;
 	}
@@ -451,8 +449,7 @@ class QueryBuilder {
 
 		lstOuterJoin.add(STR_SPACE + outerJoin);
 
-		lstTables.add(STR_SPACE + nameSchema + nameTable + " "
-				+ aliasTable);
+		lstTables.add(STR_SPACE + nameSchema + nameTable + " " + aliasTable);
 		if (!isOneToOne) {
 			contCoreColumns++;
 		}
@@ -493,7 +490,6 @@ class QueryBuilder {
 	 */
 	public void addColumn(String key, Validation anntValidation) {
 
-	
 		String column = aliasTable + "." + key;
 
 		if (anntValidation != null) {
@@ -509,15 +505,16 @@ class QueryBuilder {
 		}
 
 		contColumn++;
-//		if (anntValidation != null && anntValidation.formatDate().length() > 0) {
-//			// lstColums.add(aliasTable +"."+key +" AS "+aliasColumn);
-//		} else {
-			lstColums.add(newLine + column + " AS " + aliasColumn + "_"
-					+ contColumn);
+		// if (anntValidation != null && anntValidation.formatDate().length() >
+		// 0) {
+		// // lstColums.add(aliasTable +"."+key +" AS "+aliasColumn);
+		// } else {
+		lstColums.add(newLine + column + " AS " + aliasColumn + "_"
+				+ contColumn);
 
-			lstColumsRS.put(key, aliasColumn + "_" + contColumn);
-			newLine = "";
-//		}
+		lstColumsRS.put(key, aliasColumn + "_" + contColumn);
+		newLine = "";
+		// }
 	}
 
 	/*
@@ -552,13 +549,13 @@ class QueryBuilder {
 
 	public void addColumnId(String key, Validation validation) {
 		contColumn++;
-//		if (validation != null && validation.formatDate().length() > 0) {
-//			// lstColums.add(aliasTable +"."+key +" AS "+aliasColumn);
-//		} else {
-			lstColums.add(newLine + aliasTable + "." + key + " AS "
-					+ aliasColumn + "_" + contColumn);
-			lstColumsRS.put(key, aliasColumn + "_" + contColumn);
-//		}
+		// if (validation != null && validation.formatDate().length() > 0) {
+		// // lstColums.add(aliasTable +"."+key +" AS "+aliasColumn);
+		// } else {
+		lstColums.add(newLine + aliasTable + "." + key + " AS " + aliasColumn
+				+ "_" + contColumn);
+		lstColumsRS.put(key, aliasColumn + "_" + contColumn);
+		// }
 		lstColumnsOrderBy.add(aliasColumn + "_" + contColumn);
 		lstColumnsWhere.add("( CORE." + aliasColumn + "_" + contColumn
 				+ " IS NULL OR " + "CORE." + aliasColumn + "_" + contColumn
@@ -566,4 +563,3 @@ class QueryBuilder {
 
 	}
 }
-

@@ -50,9 +50,15 @@
   </dependencies>
   <organization>
   	<name>Elx Source</name>
-  	<url>http://code.google.com/p/elx-orm</url>
+  	<url>http://code.google.com/p/orm-elx/</url>
   </organization>
   <issueManagement>
-  	<url>http://code.google.com/p/elx-orm/issues/list</url>
+  	<url>http://code.google.com/p/orm-elx/issues/list</url>
   </issueManagement>
+  <scm>
+  	<url>https://orm-elx.googlecode.com/svn/trunk/elx-example</url>
+  	<connection>https://orm-elx.googlecode.com/svn/trunk/elx-example</connection>
+  	<developerConnection>https://orm-elx.googlecode.com/svn/trunk/elx-example</developerConnection>
+  	<tag>elx-example</tag>
+  </scm>
 </project>

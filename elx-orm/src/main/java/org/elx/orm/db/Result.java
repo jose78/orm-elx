@@ -37,7 +37,7 @@ public class Result {
 	 * @param key
 	 * @param value
 	 */
-	protected void addResult(String key,Integer value) {
+	protected void addResult(String key, Integer value) {
 		result.put(key, value);
 	}
 

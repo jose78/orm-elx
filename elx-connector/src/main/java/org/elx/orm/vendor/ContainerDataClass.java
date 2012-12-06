@@ -28,7 +28,6 @@ import org.elx.orm.utils.ElxGenericException;
 import org.elx.orm.utils.Entity;
 import org.elx.orm.utils.type.TypeOperation;
 
-
 public class ContainerDataClass {
 
 	private Map<String, String> mapNameSchema = null;
@@ -63,8 +62,6 @@ public class ContainerDataClass {
 			readDataFromClass(clazz, typeOperation);
 		}
 	}
-
-
 
 	private void readDataFromAnnotation(Class<? extends Entity> clazz,
 			TypeOperation typeOperation) {
@@ -144,15 +141,15 @@ public class ContainerDataClass {
 		return mapNameIdColumns;
 	}
 
-
 	/**
 	 * @param nameConnection
 	 *            TODO
 	 * @return the nameSchema
 	 */
 	public String getNameSchema(String nameConnection) {
-		String value= null;
-		return ".".equals(value= mapNameSchema.get(nameConnection)) ? " ":  value;
+		String value = null;
+		return ".".equals(value = mapNameSchema.get(nameConnection)) ? " "
+				: value;
 	}
 
 	/**

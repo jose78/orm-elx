@@ -73,4 +73,17 @@
 			</plugin>
 		</plugins>
 	</build>
+  <organization>
+  	<name>Elx Source</name>
+  	<url>http://code.google.com/p/orm-elx/</url>
+  </organization>
+  <issueManagement>
+  	<url>http://code.google.com/p/orm-elx/issues/list</url>
+  </issueManagement>
+	<scm>
+		<url>https://orm-elx.googlecode.com/svn/trunk/elx-orm</url>
+		<connection>https://orm-elx.googlecode.com/svn/trunk/elx-orm</connection>
+		<developerConnection>https://orm-elx.googlecode.com/svn/trunk/elx-orm</developerConnection>
+		<tag>elx-orm</tag>
+	</scm>
 </project>
