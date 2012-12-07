@@ -10,7 +10,7 @@
     * Step 4: Use it¡¡¡
      * [Create Create]
      * [Read Read]
-     * Update
+     * [Update Update]
      * [Delete Delete]
      * [Find Find]
      * [Run_Any_Query Run any query]
