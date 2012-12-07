@@ -1,0 +1,18 @@
+#summary One-sentence summary of this page.
+
+= Read =
+
+{{{
+	try {
+		Select select = new Select("SELECT c.* " 
+                                         +" FROM schema_elx.Company "
+                                         +" c WHERE c.comp_id_company > ? "
+                                         +" AND comp_id_company < ? ",1,100
+                                         ).setPagination(3, 4);
+
+		final List<TblCompany> result = new Crud().read(TblCompany.class, select);
+		
+	} catch (Exception e) {
+		log.error(e.getMessage(), e);
+	}
+}}}
