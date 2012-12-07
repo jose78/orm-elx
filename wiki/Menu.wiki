@@ -13,6 +13,7 @@
      * Update
      * [Delete Delete]
      * [Find Find]
+     * Run any query
   * Annotations
    * Connections 
     * {{{@ConnectionDef}}}
