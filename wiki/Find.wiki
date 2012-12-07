@@ -11,8 +11,8 @@
                                                                 new Criteria(" comp_id_company < ? " , 201).setPagination(1, 1)
                                                              );
 
-		} catch (final Exception e) {
-			log.error(e.getMessage(), e);
-		}
+	} catch (final Exception e) {
+		log.error(e.getMessage(), e);
+	}
 
 }}}
