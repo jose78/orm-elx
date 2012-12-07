@@ -2,12 +2,4 @@
 
 = Motivation =
 
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+This framework wants to resolve the problem of architecture in the layer of data, providing a simple and easy solutions to access to multiple database using JDBC connections directly.
