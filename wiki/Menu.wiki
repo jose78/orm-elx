@@ -12,7 +12,7 @@
      * [Read Read]
      * Update
      * [Delete Delete]
-     * Find
+     * [Find Find]
   * Annotations
    * Connections 
     * {{{@ConnectionDef}}}
