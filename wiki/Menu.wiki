@@ -13,7 +13,7 @@
      * Update
      * [Delete Delete]
      * [Find Find]
-     * [Run any query Run_Any_Query]
+     * [Run_Any_Query Run any query]
   * Annotations
    * Connections 
     * {{{@ConnectionDef}}}
