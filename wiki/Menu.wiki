@@ -5,7 +5,7 @@
   * Getting Started
    * Steps
     * Step 1:
-    * [create_connection  Step 2: Connection]
+    * [Create_Connection Step 2: Connection]
     * Step 3: Entities
     * Step 4: Use it¡¡¡
      * [Create Create]
