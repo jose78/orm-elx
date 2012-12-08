@@ -18,17 +18,15 @@
    * Connections 
     * {{{@ConnectionDef}}}
    * DTOś 
-    * {{{@DTO}}}
     * {{{@Connection}}}
     * {{{@Connections}}}
    * Entities
-    * [Column @Column]
-    * {{{@DateAsString}}}
+    * {{{@Column}}}
     * {{{@Id}}}
-    * [Reference @Reference]
-    * [Table @Table]
-     * {{{@Connection}}}
-    * [Tables @Tables]
+    * {{{@Reference}}}
+    * {{{@Table}}}
+    * {{{@Connection}}}
+    * {{{@Tables}}}
     * {{{@Validation}}}  
  * Databases supported
   * Derby DB
