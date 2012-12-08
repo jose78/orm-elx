@@ -1,7 +1,7 @@
-
 = {{{@ConnectionDef}}} =
 
-This annotation is used to indicate that one class must be used as *DB* *connection*,  
+This annotation is used to indicate that one class must be used as *DB* *connection*, here you can configure:
+  * A *unique* name for the connection
 
 
 Add your content here.
