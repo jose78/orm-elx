@@ -1,6 +1,6 @@
 = Create and configure your connections =
 
-The definition of connections is very simple and easy, you only need to  extend the class AbstractConncection and implement their abstract methods and to use the annotation @ConnectionDef. You haave here two examples:
+The definition of connections is very simple and easy, you only need to  extend the class {{{AbstractConncection}}} and implement their abstract methods, to end also is necessary to use the annotation {{{@ConnectionDef}}}. You haave here two examples:
 
 == 1º Example: Connection definition with DataSource ==
 
