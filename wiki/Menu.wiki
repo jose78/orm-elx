@@ -6,7 +6,7 @@
    * Steps
     * Step 1:
     * [Create_Connection Step 2: Connection]
-    * Step 3: Entities
+    * [Entity Step 3: Entities]
     * Step 4: Use it¡¡¡
      * [Create Create]
      * [Read Read]
