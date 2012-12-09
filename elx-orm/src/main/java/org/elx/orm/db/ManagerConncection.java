@@ -235,6 +235,13 @@ public class ManagerConncection {
 		return containerInstances.values();
 	}
 
+	/**
+	 * Execute Insert, Update or Delete.
+	 * @param select query to execute
+	 * @param connections set of connections
+	 * @return
+	 * @throws SQLException
+	 */
 	public Result execute(Select select, String... connections)
 			throws SQLException {
 		Result result = new Result();

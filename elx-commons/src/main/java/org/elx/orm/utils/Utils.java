@@ -18,7 +18,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 import org.elx.orm.utils.type.TypeJava;
-import org.elx.orm.utils.type.TypeMySQL;
 
 /**
  * Class of utilities.
@@ -99,29 +98,6 @@ public class Utils {
 			}
 		}
 		return new Tupla<TypeJava, Object>(key, value);
-	}
-
-	/**
-	 * Build a Tupla for MySQL.
-	 * 
-	 * @param value
-	 * @return
-	 */
-	public Tupla<TypeMySQL, Object> getTuplaMySql(Object value) {
-		TypeMySQL key = null;
-
-		if (value == null) {
-			key = TypeMySQL.Null;
-		} else {
-			for (final TypeMySQL type : TypeMySQL.values()) {
-				if (type.toString().equals(
-						value.getClass().getName().replace(".", "_"))) {
-					key = type;
-					break;
-				}
-			}
-		}
-		return new Tupla<TypeMySQL, Object>(key, value);
 	}
 
 	/**

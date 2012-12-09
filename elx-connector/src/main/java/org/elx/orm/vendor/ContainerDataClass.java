@@ -20,7 +20,6 @@ import java.util.TreeMap;
 
 import org.elx.orm.annotations.Column;
 import org.elx.orm.annotations.Connection;
-import org.elx.orm.annotations.Connections;
 import org.elx.orm.annotations.Id;
 import org.elx.orm.annotations.Table;
 import org.elx.orm.annotations.Tables;
@@ -28,6 +27,11 @@ import org.elx.orm.utils.ElxGenericException;
 import org.elx.orm.utils.Entity;
 import org.elx.orm.utils.type.TypeOperation;
 
+/**
+ * 
+ * @author Jose Clavero Anderica jose.clavero.anderica@gmail.com
+ * 
+ */
 public class ContainerDataClass {
 
 	private Map<String, String> mapNameSchema = null;
@@ -74,8 +78,8 @@ public class ContainerDataClass {
 				final Id anntId = field.getAnnotation(Id.class);
 				switch (typeOperation) {
 				case Delete:
-					if (anntId != null) {
-						mapNameColumnsField.put(column, field);
+					if (anntId != null) {						
+						mapNameIdColumns.put(column, field);
 					}
 					break;
 				case Insert:
@@ -87,8 +91,7 @@ public class ContainerDataClass {
 					mapNameColumnsField.put(column, field);
 					break;
 				case Update:
-					if (anntId != null) {
-						mapNameIdColumnsField.put(column, field);
+					if (anntId != null) {						
 						mapNameIdColumns.put(column, field);
 					} else if (anntColumn.updatable()) {
 						mapNameColumnsField.put(column, field);
@@ -200,35 +203,35 @@ public class ContainerDataClass {
 						anntTable.schema() + ".");
 
 			} else {
-				// Como no tiene anotación TABLE/TABLES nos regimos por el
-				// nombre de la tabla.
-				Connections anntConnections = clazz
-						.getAnnotation(Connections.class);
-				if (anntConnections != null) {
-
-					for (Connection connection : anntConnections
-							.lstConnections()) {
-						tableCnxValue.put(connection.nameConnection(),
-								clazz.getSimpleName());
-						schemaCnxValue.put(
-								connection.nameClassConnectionProvider(), "");
-					}
-
-				} else {
-					Connection anntConnection = clazz
-							.getAnnotation(Connection.class);
-					if (anntConnection != null) {
-						tableCnxValue.put(anntConnection.nameConnection(),
-								clazz.getSimpleName());
-						schemaCnxValue.put(
-								anntConnection.nameClassConnectionProvider(),
-								"");
-					} else {
-						// throw new
-						// ElxGenericException("Connection BAD USED.");
-						// Error no hay conexión¡¡¡¡
-					}
-				}
+//				// Como no tiene anotación TABLE/TABLES nos regimos por el
+//				// nombre de la tabla.
+//				Connections anntConnections = clazz
+//						.getAnnotation(Connections.class);
+//				if (anntConnections != null) {
+//
+//					for (Connection connection : anntConnections
+//							.lstConnections()) {
+//						tableCnxValue.put(connection.nameConnection(),
+//								clazz.getSimpleName());
+//						schemaCnxValue.put(
+//								connection.nameClassConnectionProvider(), "");
+//					}
+//
+//				} else {
+//					Connection anntConnection = clazz
+//							.getAnnotation(Connection.class);
+//					if (anntConnection != null) {
+//						tableCnxValue.put(anntConnection.nameConnection(),
+//								clazz.getSimpleName());
+//						schemaCnxValue.put(
+//								anntConnection.nameClassConnectionProvider(),
+//								"");
+//					} else {
+//						// throw new
+//						// ElxGenericException("Connection BAD USED.");
+//						// Error no hay conexión¡¡¡¡
+//					}
+//				}
 			}
 		}
 		return result;

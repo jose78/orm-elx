@@ -37,20 +37,5 @@ public @interface Connection {
 	 */
 	String nameConnection();
 
-	/**
-	 * Retrieve the name of the class that provide the
-	 * <b>ManagerConncection</b>.
-	 * 
-	 * @return
-	 */
-	String nameClassConnectionProvider() default "org.elx.orm.db.SessionConncection";
-
-	/**
-	 * Retrieve the name of the static method that provide the
-	 * <b>ManagerConncection</b>.
-	 * 
-	 * @return
-	 */
-	String nameStaticMethodConnectionProvider() default "getManagerConncection";
-
+	
 }
