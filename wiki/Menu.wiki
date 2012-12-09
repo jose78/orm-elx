@@ -16,7 +16,7 @@
      * [Run_Any_Query Run any query]
   * Annotations
    * Connections 
-    * {{{@ConnectionDef}}}
+    * [ConnectionDef @ConnectionDef]
    * DTOś 
     * {{{@Connection}}}
     * {{{@Connections}}}
