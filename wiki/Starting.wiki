@@ -6,4 +6,4 @@ To explain how to work Elx, we will use how example three entities:
   * {{{TblAddress}}}
 
 This is their relation:
-[http://orm-elx.googlecode.com/files/diagram.png]
+||[http://orm-elx.googlecode.com/files/diagram.png]||
