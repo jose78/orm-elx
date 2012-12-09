@@ -1,15 +1,13 @@
-= {{{@ConnectionDef}}} =
+= ConnectionDef =
 
-This annotation is used to indicate that one class must be used as *DB* *connection*, here you can configure:
-  * A *unique* name for the connection
+When Elx start to work, Elx scans the classpath to find all classes that they will use this annotation. With {{{@ConnectionDef}}} you can indicate:
+  * The name of the connection.
+  * If the connection is writable  and/or readable
+  * By default, Elx use the class *org.elx.orm.db.SessionConncection* to  store the *ManagerConncection* in the thread, If you work with multi-  thread you must change this and to use your own method to manage the *ManagerConncection*.
 
+{{{
 
-Add your content here.
+@ConnectionDef(nameConnection = "MySQL_CNX", read = true, write = true)
+}}}
 
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  
