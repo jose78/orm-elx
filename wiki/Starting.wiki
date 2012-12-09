@@ -1,9 +1,9 @@
-
 = Getting Starting=
 
 To explain how to work Elx, we will use how example three entities:
-  * TblCompany
-  * TblEmployee
-  * TblAddress
+  * {{{TblCompany}}}
+  * {{{TblEmployee}}}
+  * {{{TblAddress}}}
+
 This is their relation:
 [http://orm-elx.googlecode.com/files/diagram.png]
