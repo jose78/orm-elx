@@ -2,7 +2,7 @@
 
  * [Motivation Motivation]
  * User's Guide
-  * Getting Started
+  * [Starting Getting Started]
    * Steps
     * Step 1:
     * [Create_Connection Step 2: Connection]
