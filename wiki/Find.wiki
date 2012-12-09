@@ -3,7 +3,7 @@
 You must work with this method if you need to get a collection of entities with their relations (One to One or One to Much). You can indicate the depth of relations to get with *level*
 
 
-[http://code.google.com/p/orm-elx/source/browse/wiki/resources/diagram.png]
+[http://orm-elx.googlecode.com/files/diagram.png]
 
 
 {{{
