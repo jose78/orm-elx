@@ -12,20 +12,3 @@ In the last point,  you must download de connector associated to the vendor of t
 || [http://www.postgresql.org/ PostgreSQL] ||  Elx-connector-postgreSQL || 
 || [http://www.mysql.com/ MySQL] ||   Elx-connector-mySQL || 
 || [http://db.apache.org/derby/ Apache Derby] ||   Elx-connector-derby  ||
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
