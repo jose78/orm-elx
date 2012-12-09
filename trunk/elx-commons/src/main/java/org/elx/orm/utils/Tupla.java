@@ -14,6 +14,11 @@
  */
 package org.elx.orm.utils;
 
+/**
+ * 
+ * @author Jose Clavero Anderica jose.clavero.anderica@gmail.com
+ * 
+ */
 public class Tupla<K, V> {
 	private K key = null;
 	private V value = null;

@@ -17,11 +17,12 @@ package org.elx.orm.vendor;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.elx.orm.annotations.ConnectionDef;
 import org.elx.orm.utils.Entity;
 import org.elx.orm.utils.type.TypeOperation;
 
 /**
- * 
+ * This class must be used to declare a DB connection. REmember to use the <b>{@link ConnectionDef}</b>. 
  * @author Jose Clavero Anderica jose.clavero.anderica@gmail.com
  * 
  */

@@ -20,5 +20,5 @@ package org.elx.orm.utils.type;
  * 
  */
 public enum SourceVendor {
-	Java, Oracle, MySQL
+	Java
 }

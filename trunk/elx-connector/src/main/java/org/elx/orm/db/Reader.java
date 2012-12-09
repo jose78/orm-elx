@@ -14,11 +14,7 @@
  */
 package org.elx.orm.db;
 
-/**
- * @author Jose Clavero Anderica
- *         jose.clavero.anderica@gmail.com
- *
- */
+
 import java.lang.reflect.Field;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -39,6 +35,11 @@ import org.elx.orm.utils.type.TypeOperation;
 import org.elx.orm.vendor.ContainerDataClass;
 import org.elx.orm.vendor.Vendor;
 
+/**
+ * This class is responsible for generating the query and the structure for the data collection.
+ * @author Jose Clavero Anderica jose.clavero.anderica@gmail.com
+ *
+ */
 public class Reader<E extends Entity> {
 
 	private QueryBuilder query = null;

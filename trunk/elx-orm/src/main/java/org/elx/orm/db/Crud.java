@@ -35,6 +35,7 @@ import org.elx.orm.utils.CacheClass;
 import org.elx.orm.utils.ElxGenericException;
 import org.elx.orm.utils.Entity;
 import org.elx.orm.utils.Utils;
+import org.elx.orm.utils.type.SourceVendor;
 import org.elx.orm.validate.ElxValidateException;
 import org.elx.orm.vendor.Vendor;
 
@@ -107,13 +108,7 @@ public class Crud implements CrudPattern {
 							+ abstractConncections.get(0).getName() + "].");
 		}
 
-		org.elx.orm.annotations.Entity anntEntity = entity.getClass()
-				.getAnnotation(org.elx.orm.annotations.Entity.class);
-		if (anntEntity == null) {
-			throw new ElxGenericException(
-					"Error, Elx not found the annotation @Entity in the class "
-							+ entity.getClass().getName() + ".");
-		}
+		
 
 		Boolean flagFirstPass = false;
 		for (int index = 0; index < abstractConncections.size(); index++) {
@@ -123,7 +118,7 @@ public class Crud implements CrudPattern {
 
 			AbstractConncection abs = abstractConncections.get(index);
 			Vendor vendor = FactoryVendor.get(abs.getVendor(),
-					anntEntity.vendorSource());
+					SourceVendor.Java);
 			if (!flagFirstPass) {
 				flagFirstPass = true;
 				if (abs.getVendor() != TypeVendor.MySQL) {
@@ -133,7 +128,7 @@ public class Crud implements CrudPattern {
 			}
 			vendor.buildInsert(entity, abs.getName());
 			numRows = abs.executeInsert(entity, vendor.getQuery(),
-					vendor.getParameterMapper(anntEntity.vendorSource()),
+					vendor.getParameterMapper(SourceVendor.Java),
 					vendor.getParameter());
 		}
 		return numRows;
@@ -147,14 +142,6 @@ public class Crud implements CrudPattern {
 	public <T extends Entity> Integer delete(T entity) throws SQLException,
 			ElxGenericException {
 
-		org.elx.orm.annotations.Entity anntEntity = entity.getClass()
-				.getAnnotation(org.elx.orm.annotations.Entity.class);
-		if (anntEntity == null) {
-			throw new ElxGenericException(
-					"Error, Elx not found the annotation @Entity in the class "
-							+ entity.getClass().getName() + ".");
-		}
-
 		List<AbstractConncection> abstractConncections = getConncection(
 				entity.getClass(), TYPE_OPERATION.WRITE);
 		Integer numRows = 0;
@@ -162,10 +149,10 @@ public class Crud implements CrudPattern {
 		for (int index = 0; index < abstractConncections.size(); index++) {
 			AbstractConncection abs = abstractConncections.get(index);
 			Vendor vendor = FactoryVendor.get(abs.getVendor(),
-					anntEntity.vendorSource());
+					SourceVendor.Java);
 			vendor.buildDelete(entity, abs.getName());
 			numRows = abs.execute(vendor.getQuery(),
-					vendor.getParameterMapper(anntEntity.vendorSource()),
+					vendor.getParameterMapper(SourceVendor.Java),
 					vendor.getParameter());
 		}
 		return numRows;
@@ -183,21 +170,14 @@ public class Crud implements CrudPattern {
 				entity.getClass(), TYPE_OPERATION.WRITE);
 		Integer numRows = 0;
 
-		org.elx.orm.annotations.Entity anntEntity = entity.getClass()
-				.getAnnotation(org.elx.orm.annotations.Entity.class);
-		if (anntEntity == null) {
-			throw new ElxGenericException(
-					"Error, Elx not found the annotation @Entity in the class "
-							+ entity.getClass().getName() + ".");
-		}
-
+		
 		for (int index = 0; index < abstractConncections.size(); index++) {
 			AbstractConncection abs = abstractConncections.get(index);
 			Vendor vendor = FactoryVendor.get(abs.getVendor(),
-					anntEntity.vendorSource());
+					SourceVendor.Java);
 			vendor.buildUpdate(entity, abs.getName());
 			numRows += abs.execute(vendor.getQuery(),
-					vendor.getParameterMapper(anntEntity.vendorSource()),
+					vendor.getParameterMapper(SourceVendor.Java),
 					vendor.getParameter());
 		}
 		return numRows;
@@ -267,25 +247,30 @@ public class Crud implements CrudPattern {
 
 		for (int index = 0; index < lstConnections.length; index++) {
 
+			
+			
 			Connection anntConnection = lstConnections[index];
+			
+			ConnectionDef anntConnectionDef= SessionConncection.getManagerConncection().get(anntConnection.nameConnection()).getClass().getAnnotation(ConnectionDef.class);
+			
 			Class<?> clazzManager = Utils.getUtil().getClass(
-					anntConnection.nameClassConnectionProvider());
+					anntConnectionDef.nameClassConnectionProvider());
 			if (clazzManager == null) {
 				throw new ElxGenericException("Error, this class:["
-						+ anntConnection.nameClassConnectionProvider()
+						+ anntConnectionDef.nameClassConnectionProvider()
 						+ "] not exist.");
 			}
 			try {
-				Method method = clazzManager.getMethod(anntConnection
+				Method method = clazzManager.getMethod(anntConnectionDef
 						.nameStaticMethodConnectionProvider());
 				managerConncection = (ManagerConncection) method.invoke(null);
 				if (method == null) {
 					throw new ElxGenericException(
 							"Error, this method:["
-									+ anntConnection
+									+ anntConnectionDef
 											.nameStaticMethodConnectionProvider()
 									+ "] is not contained in the class:["
-									+ anntConnection
+									+ anntConnectionDef
 											.nameClassConnectionProvider()
 									+ "].");
 				}
@@ -332,31 +317,23 @@ public class Crud implements CrudPattern {
 	 * @see net.java.elx.db.CrudPattern#read(java.lang.Class,
 	 * org.elx.orm.vendor.Select)
 	 */
-	public <T extends Entity, C extends Collection<T>> C read(Class<T> clazz,
+	public <T, C extends Collection<T>> C read(Class<T> clazz,
 			Select select) throws SQLException, ElxGenericException {
 
 		C result = (C) new ArrayList<T>();
-
-		org.elx.orm.annotations.DTO anntDTO = clazz
-				.getAnnotation(org.elx.orm.annotations.DTO.class);
-		if (anntDTO == null) {
-			throw new ElxGenericException(
-					"Error, Elx not found the annotation @DTO in the class "
-							+ clazz.getName() + ".");
-		}
-
+		
 		List<AbstractConncection> abstractConncections = getConncection(clazz,
 				TYPE_OPERATION.READ);
 		for (int index = 0; index < abstractConncections.size(); index++) {
 			AbstractConncection abs = abstractConncections.get(index);
 			Vendor vendor = FactoryVendor.get(abs.getVendor(),
-					anntDTO.vendorSource());
+					SourceVendor.Java);
 
 			String query = vendor.buildPaginationConsult(select.getQuery(),
 					select.getPageNum(), select.getPageSize());
 
 			ResultSet resultSet = abs.executeSelect(query,
-					vendor.getParameterMapper(anntDTO.vendorSource()),
+					vendor.getParameterMapper(SourceVendor.Java),
 					select.getParameters());
 
 			result.addAll(vendor.getResultOfQuerySelect(resultSet, clazz));
@@ -374,13 +351,6 @@ public class Crud implements CrudPattern {
 			Integer level, Criteria criteria) throws SQLException,
 			ElxGenericException {
 
-		org.elx.orm.annotations.Entity anntEntity = clazz
-				.getAnnotation(org.elx.orm.annotations.Entity.class);
-		if (anntEntity == null) {
-			throw new ElxGenericException(
-					"Error, Elx not found the annotation @Entity in the class "
-							+ clazz.getName() + ".");
-		}
 
 		Collection<T> result = new ArrayList<T>();
 
@@ -390,7 +360,7 @@ public class Crud implements CrudPattern {
 		for (int index = 0; index < abstractConncections.size(); index++) {
 			AbstractConncection abs = abstractConncections.get(index);
 			Vendor vendor = FactoryVendor.get(abs.getVendor(),
-					anntEntity.vendorSource());
+					SourceVendor.Java);
 
 			Reader<T> reader = new Reader<T>(vendor, clazz, level,
 					abs.getName());
@@ -411,7 +381,7 @@ public class Crud implements CrudPattern {
 			}
 
 			ResultSet resultSet = abs.executeSelect(query,
-					vendor.getParameterMapper(anntEntity.vendorSource()),
+					vendor.getParameterMapper(SourceVendor.Java),
 					criteria.getParameters());
 			result.addAll(reader.buildResult(resultSet));
 

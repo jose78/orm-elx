@@ -79,7 +79,7 @@ public abstract class Vendor {
 	 * @throws SQLException
 	 * @throws ElxGenericException
 	 */
-	public <T extends Entity> java.util.List<T> getResultOfQuerySelect(
+	public <T> java.util.List<T> getResultOfQuerySelect(
 			ResultSet rs, Class<T> clazz) throws SQLException,
 			ElxGenericException {
 		final List<T> lstResul = new ArrayList<T>();
@@ -122,7 +122,7 @@ public abstract class Vendor {
 	 * @throws SQLException
 	 * @throws ElxGenericException
 	 */
-	private <T extends Entity> T reloadSelect(
+	private <T> T reloadSelect(
 			HashMap<String, Field> mapAtrField, Class<T> clazz, ResultSet rs)
 			throws SQLException, Exception {
 

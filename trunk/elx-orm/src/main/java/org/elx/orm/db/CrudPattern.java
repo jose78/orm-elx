@@ -81,7 +81,7 @@ public interface CrudPattern {
 			Integer level, Criteria criteria) throws SQLException,
 			ElxGenericException;
 
-	public abstract <T extends Entity, C extends Collection<T>> C read(
+	public abstract <T, C extends Collection<T>> C read(
 			Class<T> clazz, Select select) throws SQLException,
 			ElxGenericException;
 
