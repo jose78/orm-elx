@@ -20,13 +20,14 @@ import org.elx.orm.annotations.Id;
 import org.elx.orm.annotations.Table;
 import org.elx.orm.annotations.Tables;
 import org.elx.orm.utils.Entity;
-import org.elx.orm.utils.type.SourceVendor;
+
+
 
 /**
  * @author jose
  * 
  */
-@org.elx.orm.annotations.Entity(vendorSource = SourceVendor.MySQL)
+
 @Tables(lstTables = {
 		@Table(name = "book", schema = "schema_elx_derby", connection = @Connection(nameConnection = "derby_CNX")),
 		@Table(name = "book", schema = "", connection = @Connection(nameConnection = "MySQL_CNX")) })

@@ -1,7 +1,5 @@
 package org.elx.orm.test.annt;
 
-import java.util.Set;
-
 import org.apache.log4j.Logger;
 import org.elx.orm.GenericTest;
 import org.elx.orm.db.Criteria;
@@ -17,7 +15,7 @@ public class TestFindCrud extends GenericTest {
 
 		try {
 			Integer level = 3;
-			final Set<TblCompany> result = this.getCrud()
+			final java.util.List<TblCompany> result = this.getCrud()
 					.find(TblCompany.class,
 							level,
 							new Criteria(" comp_id_company < 201 ")

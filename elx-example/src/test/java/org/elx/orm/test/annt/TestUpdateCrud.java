@@ -21,8 +21,9 @@ public class TestUpdateCrud extends GenericTest {
 					new Criteria());
 
 			TblAddress entity = lstResult.get(0);
-			entity.setCity("MOD CITY");
-			entity.setName("MOD NAME");
+			entity.setCity("CITY:MOD CITY.");
+			entity.setName("NAME:MOD NAME.");
+			entity.setState("STATE:MOD NAME.");
 
 			getCrud().update(entity);
 

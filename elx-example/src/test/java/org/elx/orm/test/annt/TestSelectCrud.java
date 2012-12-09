@@ -64,11 +64,10 @@ public class TestSelectCrud extends GenericTest {
 		try {
 			Select select = new Select(
 					"SELECT c.comp_id_company as id, c.COMP_NAME_COMPANY as name "
-							+ " FROM schema_elx.Company c WHERE c.comp_id_company >  ? AND comp_id_company < ?",
+							+ " FROM Company c WHERE c.comp_id_company >  ? AND comp_id_company < ?",
 					1, 100).setPagination(1, 15);
 
-			final Set<org.elx.orm.select.Item> result = this.getCrud().read(
-					Item.class, select);
+			final Set<org.elx.orm.select.Item> result = this.getCrud().read(Item.class, select);
 
 			for (Item value : result) {
 				TestSelectCrud.log.debug(value.toString());
