@@ -99,6 +99,8 @@ public @interface Validation {
 	 * only if a decimal column is used.) Value must be set by developer if used
 	 * when generating the DDL for the column. <br>
 	 * <b>Default value:</b> 0
+	 * 
+	 * <b>TODO</b>	 
 	 */
 	int precision() default 0;
 
@@ -118,6 +120,6 @@ public @interface Validation {
 	 * 
 	 * <b>TODO</b>
 	 */
-	String descriptin() default "";
+	String description() default "";
 
 }
