@@ -2,11 +2,9 @@
 
 = Run any query =
 
-
+If you need to run a massive *update* or *delete* you must work with the *ManagerConnection*, for example:
 
 {{{
-
-
 	try {
 
 		Result result = SessionConncection.getManagerConncection().execute(
