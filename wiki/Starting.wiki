@@ -5,5 +5,5 @@ To explain how to work Elx, we will use how example three entities:
   * {{{TblEmployee}}}
   * {{{TblAddress}}}
 
-This is their relation:
+these are your relationships:
 ||[http://orm-elx.googlecode.com/files/diagram.png]||
