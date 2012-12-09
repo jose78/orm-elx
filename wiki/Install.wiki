@@ -1,6 +1,27 @@
 = Install =
 
-In this moment Elx  is not available in the Maven's repositories so you would must download the jars from [http://code.google.com/p/orm-elx/downloads/list here].
+In this moment Elx  is not available in the Maven's repositories so you would must download the jars from [http://code.google.com/p/orm-elx/downloads/list here]. To start to work, you must download this package:
+  * Elx-commons
+  * Elx-connector	
+  * Elx-validation
+  * Elx-orm
+
+In the last point,  you must download de connector associated to the vendor of the DB 
+
+|| Vendor || Connector || 
+|| [http://www.postgresql.org/ PostgreSQL] ||  Elx-connector-postgreSQL || 
+|| [http://www.mysql.com/ MySQL] ||   Elx-connector-mySQL || 
+|| [http://db.apache.org/derby/ Apache Derby] ||   Elx-connector-derby  ||
+||
+
+
+ Elx-orm
+ Elx-connector-postgreSQL
+ Elx-connector-mySQL	 
+ Elx-connector-derby 
+ 
+  
+ 
 
 = Details =
 
