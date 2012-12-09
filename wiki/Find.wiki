@@ -1,9 +1,8 @@
-#summary One-sentence summary of this page.
-
 = Find =
 
-{{{
+You must work with this method if you need to get a collection of entities with their relations (One to One or One to Much). You can indicate the depth of relations to get with *level*
 
+{{{
 	try {
 		Integer level = 3;
 		final Set<TblCompany> result = new Crud().find(TblCompany.class,
