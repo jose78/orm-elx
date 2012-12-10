@@ -6,7 +6,7 @@ the annotation *@Id* in the attribute indicates that this attribute  is the id o
 {{{
               ......
 
-        @Id(nameConnection = "CNX_TO_GENERATE_SEQ",sequenceName= "NAME_SEQ_TO_GET")
+        @Id(nameConnection = "CNX_TO_GENERATE_SEQ",sequenceName= "NAME_SEQ_TO_RUN")
         @Column(name = "emp_id_employee")
         private Long idEmployee;
         
