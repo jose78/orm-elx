@@ -7,11 +7,12 @@ You must work with this method if you need to get a collection of entities with 
   * level = 2 of Company -> you get a collection of *TblCompany* with their relations (Address , Employee-> Address).
 
 {{{ 
+	Criteria criteria= new Criteria(" comp_id_company < ? " , 201).setPagination(1, 1)
 	try {
 		Integer level = 2;
 		final Set<TblCompany> result = new Crud().find(TblCompany.class,
                                                                 level,
-                                                                new Criteria(" comp_id_company < ? " , 201).setPagination(1, 1)
+                                                                criteria
                                                              );
 
 	} catch (final Exception e) {
