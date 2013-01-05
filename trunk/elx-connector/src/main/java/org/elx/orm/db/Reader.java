@@ -26,7 +26,6 @@ import java.util.TreeMap;
 
 import org.elx.orm.annotations.Id;
 import org.elx.orm.annotations.Reference;
-import org.elx.orm.annotations.Validation;
 import org.elx.orm.utils.CacheClass;
 import org.elx.orm.utils.ElxGenericException;
 import org.elx.orm.utils.Entity;
@@ -34,6 +33,7 @@ import org.elx.orm.utils.Utils;
 import org.elx.orm.utils.type.TypeOperation;
 import org.elx.orm.vendor.ContainerDataClass;
 import org.elx.orm.vendor.Vendor;
+import org.elx.validation.annotations.Validation;
 
 /**
  * This class is responsible for generating the query and the structure for the data collection.

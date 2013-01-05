@@ -6,11 +6,6 @@
   <name>Elx-example</name>
   <description>Examples of ORM ELX</description>
   <dependencies>
-  	<dependency>
-  		<groupId>Elx</groupId>
-  		<artifactId>Elx-connector-derby</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
   
   	<dependency>
   		<groupId>junit</groupId>
@@ -33,11 +28,6 @@
   		<version>9.1-901-1.jdbc4</version>
   	</dependency>
   	<dependency>
-  		<groupId>Elx</groupId>
-  		<artifactId>Elx-connector-mySQL</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  	<dependency>
   		<groupId>mysql</groupId>
   		<artifactId>mysql-connector-java</artifactId>
   		<version>5.1.21</version>
@@ -45,6 +35,11 @@
   	<dependency>
   		<groupId>Elx</groupId>
   		<artifactId>Elx-orm</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>Elx</groupId>
+  		<artifactId>Elx-orm-connector-derby</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   </dependencies>

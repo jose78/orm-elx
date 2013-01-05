@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>Elx</groupId>
-  <artifactId>Elx-connector-mySQL</artifactId>
+  <artifactId>Elx-orm-connector-mySQL</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Elx-connector-mySQL</name>
+  <name>Elx-orm-connector-mySQL</name>
   
    <dependencies>
 		<dependency>
@@ -13,19 +13,14 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>Elx</groupId>
-			<artifactId>Elx-commons</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>Elx</groupId>
-			<artifactId>Elx-connector</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.21</version>
+		</dependency>
+		<dependency>
+			<groupId>Elx</groupId>
+			<artifactId>Elx-orm-connector</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
    </dependencies>
   
@@ -43,10 +38,10 @@
 	</plugins>
 	</build>
   <scm>
-  	<url>https://orm-elx.googlecode.com/svn/trunk/elx-connector-mySQL</url>
-  	<connection>https://orm-elx.googlecode.com/svn/trunk/elx-connector-mySQL</connection>
-  	<developerConnection>https://orm-elx.googlecode.com/svn/trunk/elx-connector-mySQL</developerConnection>
-  	<tag>elx-connector-mySQL</tag>
+  	<url>https://orm-elx.googlecode.com/svn/trunk/elx-orm-connector-mySQL</url>
+  	<connection>https://orm-elx.googlecode.com/svn/trunk/elx-orm-connector-mySQL</connection>
+  	<developerConnection>https://orm-elx.googlecode.com/svn/trunk/elx-orm-connector-mySQL</developerConnection>
+  	<tag>elx-orm-connector-mySQL</tag>
   </scm>
   <organization>
   	<name>Elx Source</name>

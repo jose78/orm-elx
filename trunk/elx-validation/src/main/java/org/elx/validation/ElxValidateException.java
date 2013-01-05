@@ -12,15 +12,21 @@
   See the License for the specific language governing permissions and
   limitations under the License.
  */
-package org.elx.orm.validate;
+package org.elx.validation;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.elx.validation.utils.ValidateCommand;
 
 /**
  * @author Jose Clavero Anderica jose.clavero.anderica@gmail.com
  * 
  */
 public class ElxValidateException extends Exception {
+
+	private static List<ValidateCommand> lstCommand = new ArrayList<ValidateCommand>();
 
 	/**
 	 * 
@@ -33,7 +39,7 @@ public class ElxValidateException extends Exception {
 	 */
 	public ElxValidateException(String message, Throwable cause) {
 		super(message, cause);
-
+		executeCmd();
 	}
 
 	/**
@@ -41,7 +47,7 @@ public class ElxValidateException extends Exception {
 	 */
 	public ElxValidateException(String message) {
 		super(message);
-
+		executeCmd();
 	}
 
 	/**
@@ -49,11 +55,26 @@ public class ElxValidateException extends Exception {
 	 */
 	public ElxValidateException(Throwable cause) {
 		super(cause);
-
+		executeCmd();
 	}
 
 	public ElxValidateException(Field field, Object obj, String cause) {
 		super("Error in " + obj.getClass().getName() + "." + field.getName()
 				+ " --> " + cause);
+		executeCmd();
+	}
+
+	private void executeCmd() {
+		for (ValidateCommand cmd : lstCommand) {
+			cmd.execute(this);
+		}
+	}
+
+	/**
+	 * 
+	 * @param command
+	 */
+	public static void addCommand(ValidateCommand command) {
+		ElxValidateException.lstCommand.add(command);
 	}
 }

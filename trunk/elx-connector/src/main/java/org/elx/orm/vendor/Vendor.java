@@ -37,7 +37,7 @@ import org.elx.orm.utils.Tupla;
 import org.elx.orm.utils.Utils;
 import org.elx.orm.utils.type.SourceVendor;
 import org.elx.orm.utils.type.TypeJava;
-import org.elx.orm.validate.ElxValidateException;
+import org.elx.validation.ElxValidateException;
 
 /**
  * 

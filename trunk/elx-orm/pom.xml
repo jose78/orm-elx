@@ -24,7 +24,7 @@
 		</dependency>		
 		<dependency>
 			<groupId>Elx</groupId>
-			<artifactId>Elx-connector</artifactId>
+			<artifactId>Elx-orm-connector</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
@@ -35,27 +35,12 @@
 		</dependency>
 		<dependency>
 			<groupId>Elx</groupId>
-			<artifactId>Elx-connector-mySQL</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.6</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.derby</groupId>
-			<artifactId>derbyclient</artifactId>
-			<version>10.8.2.2</version>
-		</dependency>
-		<dependency>
-			<groupId>Elx</groupId>
-			<artifactId>Elx-connector-derby</artifactId>
+			<artifactId>Elx-orm-connector-mySQL</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>Elx</groupId>
-			<artifactId>Elx-commons</artifactId>
+			<artifactId>Elx-orm-connector-derby</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

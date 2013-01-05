@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>Elx</groupId>
-  <artifactId>Elx-connector-derby</artifactId>
+  <artifactId>Elx-orm-connector-derby</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Elx-connector-derby</name>
+  <name>Elx-orm-connector-derby</name>
   
    <dependencies>
 		<dependency>
@@ -13,19 +13,14 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>Elx</groupId>
-			<artifactId>Elx-commons</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>Elx</groupId>
-			<artifactId>Elx-connector</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.derby</groupId>
 			<artifactId>derbyclient</artifactId>
 			<version>10.8.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>Elx</groupId>
+			<artifactId>Elx-orm-connector</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
    </dependencies>
   
@@ -43,10 +38,10 @@
 	</plugins>
 	</build>
   <scm>
-  	<url>https://orm-elx.googlecode.com/svn/trunk/elx-connector-derby</url>
-  	<connection>https://orm-elx.googlecode.com/svn/trunk/elx-connector-derby</connection>
-  	<developerConnection>https://orm-elx.googlecode.com/svn/trunk/elx-connector-derby</developerConnection>
-  	<tag>elx-connector-derby</tag>
+  	<url>https://orm-elx.googlecode.com/svn/trunk/elx-orm-connector-derby</url>
+  	<connection>https://orm-elx.googlecode.com/svn/trunk/elx-orm-connector-derby</connection>
+  	<developerConnection>https://orm-elx.googlecode.com/svn/trunk/elx-orm-connector-derby</developerConnection>
+  	<tag>elx-orm-connector-derby</tag>
   </scm>
     <organization>
   	<name>Elx Source</name>

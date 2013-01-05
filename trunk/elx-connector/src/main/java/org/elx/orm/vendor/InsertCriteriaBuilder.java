@@ -18,12 +18,12 @@ import java.lang.reflect.Field;
 import java.util.Map.Entry;
 
 import org.elx.orm.annotations.Column;
-import org.elx.orm.annotations.Validation;
 import org.elx.orm.utils.Entity;
 import org.elx.orm.utils.Utils;
 import org.elx.orm.utils.type.TypeOperation;
-import org.elx.orm.validate.ElxValidateException;
-import org.elx.orm.validate.ValidateEntity;
+import org.elx.validation.ElxValidateException;
+import org.elx.validation.ValidateEntity;
+import org.elx.validation.annotations.Validation;
 
 /**
  * This class contain the logic and methods necessary for build the query of
