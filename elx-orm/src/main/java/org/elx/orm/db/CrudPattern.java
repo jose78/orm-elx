@@ -19,7 +19,7 @@ import java.util.Collection;
 
 import org.elx.orm.utils.ElxGenericException;
 import org.elx.orm.utils.Entity;
-import org.elx.orm.validate.ElxValidateException;
+import org.elx.validation.ElxValidateException;
 
 /**
  * 

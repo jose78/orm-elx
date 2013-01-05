@@ -36,8 +36,8 @@ import org.elx.orm.utils.ElxGenericException;
 import org.elx.orm.utils.Entity;
 import org.elx.orm.utils.Utils;
 import org.elx.orm.utils.type.SourceVendor;
-import org.elx.orm.validate.ElxValidateException;
 import org.elx.orm.vendor.Vendor;
+import org.elx.validation.ElxValidateException;
 
 /**
  * 

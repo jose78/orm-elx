@@ -12,13 +12,12 @@
   See the License for the specific language governing permissions and
   limitations under the License.
  */
-package org.elx.orm.validate;
+package org.elx.validation;
 
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 
-import org.elx.orm.annotations.Validation;
-import org.elx.orm.utils.Utils;
+import org.elx.validation.annotations.Validation;
 
 /**
  * @author Jose Clavero Anderica jose.clavero.anderica@gmail.com
@@ -42,8 +41,7 @@ public class ValidateEntity {
 	private void validateNullable(Validation anntValidation, Field field,
 			Object obj) throws ElxValidateException {
 
-		if (Utils.getUtil().getValueField(obj, field) == null
-				&& !anntValidation.nullable()) {
+		if (getValueField(obj, field) == null && !anntValidation.nullable()) {
 			final String cause = "the value is NULL";
 			throw new ElxValidateException(field, obj, cause);
 		}
@@ -60,8 +58,8 @@ public class ValidateEntity {
 			Object obj) throws ElxValidateException {
 		String value = null;
 		if (anntValidation.toTrim()
-				&& (value = Utils.getUtil().getValueField(obj, field)) != null) {
-			Utils.getUtil().setValueField(obj, field, value.trim());
+				&& (value = getValueField(obj, field)) != null) {
+			setValueField(obj, field, value.trim());
 		}
 	}
 
@@ -74,8 +72,8 @@ public class ValidateEntity {
 			Field field, Object obj) throws ElxValidateException {
 		String value = null;
 		if (anntValidation.toUppercase()
-				&& (value = Utils.getUtil().getValueField(obj, field)) != null) {
-			Utils.getUtil().setValueField(obj, field, value.toUpperCase());
+				&& (value = getValueField(obj, field)) != null) {
+			setValueField(obj, field, value.toUpperCase());
 		}
 	}
 
@@ -88,8 +86,8 @@ public class ValidateEntity {
 			Field field, Object obj) throws ElxValidateException {
 		String value = null;
 		if (anntValidation.toLowercase()
-				&& (value = Utils.getUtil().getValueField(obj, field)) != null) {
-			Utils.getUtil().setValueField(obj, field, value.toLowerCase());
+				&& (value = getValueField(obj, field)) != null) {
+			setValueField(obj, field, value.toLowerCase());
 		}
 	}
 
@@ -104,7 +102,7 @@ public class ValidateEntity {
 		String value = null;
 		if (!anntValidation.contains()[0].equals("")
 				&& anntValidation.contains().length > 0
-				&& (value = Utils.getUtil().getValueField(obj, field)) != null) {
+				&& (value = getValueField(obj, field)) != null) {
 			Boolean isContained = false;
 			for (int index = 0; !isContained
 					&& index < anntValidation.contains().length; index++) {
@@ -129,7 +127,7 @@ public class ValidateEntity {
 		String value = null;
 		if (!anntValidation.startWith()[0].equals("")
 				&& anntValidation.startWith().length > 0
-				&& (value = Utils.getUtil().getValueField(obj, field)) != null) {
+				&& (value = getValueField(obj, field)) != null) {
 			Boolean isContained = false;
 			for (int index = 0; index < anntValidation.startWith().length; index++) {
 				isContained = isContained
@@ -152,7 +150,7 @@ public class ValidateEntity {
 		String value = null;
 		if (!anntValidation.endWith()[0].equals("")
 				&& anntValidation.endWith().length > 0
-				&& (value = Utils.getUtil().getValueField(obj, field)) != null) {
+				&& (value = getValueField(obj, field)) != null) {
 			Boolean isContained = false;
 			for (int index = 0; index < anntValidation.endWith().length; index++) {
 				isContained = isContained
@@ -173,7 +171,7 @@ public class ValidateEntity {
 	private void validateMaxLength(Validation anntValidation, Field field,
 			Object obj) throws ElxValidateException {
 		String value = null;
-		if ((value = Utils.getUtil().getValueField(obj, field)) != null
+		if ((value = getValueField(obj, field)) != null
 				&& value.length() > anntValidation.maxLength()) {
 			final String cause = "the length of the value is bigger than maxLength";
 			throw new ElxValidateException(field, obj, cause);
@@ -188,7 +186,7 @@ public class ValidateEntity {
 	private void validateMinLength(Validation anntValidation, Field field,
 			Object obj) throws ElxValidateException {
 		String value = null;
-		if ((value = Utils.getUtil().getValueField(obj, field)) != null
+		if ((value = getValueField(obj, field)) != null
 				&& value.length() < anntValidation.minLength()) {
 			final String cause = "the length of the value is less than the minLength";
 			throw new ElxValidateException(field, obj, cause);
@@ -269,6 +267,41 @@ public class ValidateEntity {
 	public static ValidateEntity get() {
 		return (validateEntity == null) ? validateEntity = new ValidateEntity()
 				: validateEntity;
+	}
+
+	/**
+	 * Get the filed's value of the object.
+	 */
+	@SuppressWarnings("unchecked")
+	private <T, V> V getValueField(T obj, Field field) {
+		field.setAccessible(true);
+		V objResult = null;
+		try {
+			objResult = ((V) field.get(obj));
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+		return objResult;
+	}
+
+	/**
+	 * The value will store at the object's attribute.
+	 * 
+	 * @param objResult
+	 * @param field
+	 * @param value
+	 * @throws ElxGenericException
+	 */
+	private void setValueField(Object objResult, Field field, Object value) {
+		field.setAccessible(true);
+		try {
+			field.set(objResult, value);
+		} catch (final Exception e) {
+			System.err.println("objResult: " + objResult);
+			System.err.println("field: " + field);
+			System.err.println("value:" + value);
+			e.printStackTrace();
+		}
 	}
 
 }

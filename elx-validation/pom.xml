@@ -4,13 +4,6 @@
   <artifactId>Elx-validation</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Elx-validation</name>
-  <dependencies>
-  	<dependency>
-  		<groupId>Elx</groupId>
-  		<artifactId>Elx-commons</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  </dependencies>
     <organization>
   	<name>Elx Source</name>
   	<url>http://code.google.com/p/orm-elx/</url>

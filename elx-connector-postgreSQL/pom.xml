@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>Elx</groupId>
-  <artifactId>Elx-connector-postgreSQL</artifactId>
+  <artifactId>Elx-orm-connector-postgreSQL</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Elx-connector-postgreSQL</name>
+  <name>Elx-orm-connector-postgreSQL</name>
   
    <dependencies>
 		<dependency>
@@ -14,7 +14,7 @@
 		</dependency>		
 		<dependency>
 			<groupId>Elx</groupId>
-			<artifactId>Elx-connector</artifactId>
+			<artifactId>Elx-orm-connector</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
@@ -38,10 +38,10 @@
 	</plugins>
 	</build>
   <scm>
-  	<url>https://orm-elx.googlecode.com/svn/trunk/elx-connector-postgreSQL</url>
-  	<connection>https://orm-elx.googlecode.com/svn/trunk/elx-connector-postgreSQL</connection>
-  	<developerConnection>https://orm-elx.googlecode.com/svn/trunk/elx-connector-postgreSQL</developerConnection>
-  	<tag>elx-connector-postgreSQL</tag>
+  	<url>https://orm-elx.googlecode.com/svn/trunk/elx-orm-connector-postgreSQL</url>
+  	<connection>https://orm-elx.googlecode.com/svn/trunk/elx-orm-connector-postgreSQL</connection>
+  	<developerConnection>https://orm-elx.googlecode.com/svn/trunk/elx-orm-connector-postgreSQL</developerConnection>
+  	<tag>elx-orm-connector-postgreSQL</tag>
   </scm>
     <organization>
   	<name>Elx Source</name>

@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>Elx</groupId>
-  <artifactId>Elx-connector</artifactId>
+  <artifactId>Elx-orm-connector</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Elx-connector</name>
+  <name>Elx-orm-connector</name>
    <dependencies>
 		<dependency>
 			<groupId>log4j</groupId>
@@ -13,12 +13,7 @@
 		</dependency>
 		<dependency>
 			<groupId>Elx</groupId>
-			<artifactId>Elx-commons</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>Elx</groupId>
-			<artifactId>elx-validation</artifactId>
+			<artifactId>Elx-validation</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
    </dependencies>
@@ -37,10 +32,10 @@
 	</plugins>
 	</build>
   <scm>
-  	<url>https://orm-elx.googlecode.com/svn/trunk/elx-connector</url>
-  	<connection>https://orm-elx.googlecode.com/svn/trunk/elx-connector</connection>
-  	<developerConnection>https://orm-elx.googlecode.com/svn/trunk/elx-connector</developerConnection>
-  	<tag>elx-connector</tag>
+  	<url>https://orm-elx.googlecode.com/svn/trunk/elx-orm-connector</url>
+  	<connection>https://orm-elx.googlecode.com/svn/trunk/elx-orm-connector</connection>
+  	<developerConnection>https://orm-elx.googlecode.com/svn/trunk/elx-orm-connector</developerConnection>
+  	<tag>elx-orm-connector</tag>
   </scm>
     <organization>
   	<name>Elx Source</name>
