@@ -1,0 +1,4 @@
+
+
+1� run ij.bat
+2� ij> connect 'jdbc:derby://localhost:1527/ElxjTest;create=true;user=adm;password=adm'
