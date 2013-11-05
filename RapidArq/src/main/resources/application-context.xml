@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+	
+	
+ 	<bean id="Factory" class="com.rapid.arq.server.FactoryService"/>
+ 	<bean id="userIsStrategy" factory-bean="Factory" factory-method="isStrategy"/>
+ 	
+    
+ 	<bean id="ServiceRename" factory-bean="Factory" factory-method="getRanameContract">
+ 		<property name="isStrategy"  ref="userIsStrategy"></property>
+ 	</bean>
+ 
+</beans>
