@@ -3,6 +3,11 @@ package com.rapid.arq.server;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * 
+ * @author xe34068
+ *
+ */
 public class RapidContext {
 
 	private static ApplicationContext context =  null;
