@@ -9,7 +9,7 @@ import com.rapid.arq.server.service.RenameContractService;
 public class RenameContractTacticServiceImpl implements RenameContractService{
 
 	public boolean renameContract(ContractDto ContractDto) {
-		// TODO Auto-generated method stub
+		System.out.println("RenameContractTacticServiceImpl");
 		return false;
 	}
 
