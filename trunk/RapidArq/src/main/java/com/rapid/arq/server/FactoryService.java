@@ -25,7 +25,7 @@ public class FactoryService {
 	
 	
 	@SuppressWarnings("unchecked")
-	private  <T> T getServiceRename2(){
+	private  <T> T getRename(){
 		boolean isStrategy= false;
 		StringBuilder nameBean= new StringBuilder();
 		if(isStrategy){
@@ -41,8 +41,9 @@ public class FactoryService {
 	
 	
 	public RenameContractService getRanameContract(){
-		return getServiceRename2();
-//				(RenameContractService) RapidContext.getBean(Constant.BEAN_SERVICE_RENAME);
+		return 
+//				getServiceRename2();
+				(RenameContractService) RapidContext.getBean(Constant.BEAN_SERVICE_RENAME);
 	}
 	
 }
