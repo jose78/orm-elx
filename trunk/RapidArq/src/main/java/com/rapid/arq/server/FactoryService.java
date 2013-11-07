@@ -1,5 +1,6 @@
 package com.rapid.arq.server;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.rapid.arq.server.service.RenameContractService;
@@ -7,6 +8,10 @@ import com.rapid.arq.server.util.Constant;
 
 @Component
 public class FactoryService {
+	
+	@Autowired
+	private RapidContext context;
+	
 	
 	private boolean  strategy = false; 
 	
@@ -34,7 +39,7 @@ public class FactoryService {
 			nameBean.append(Constant.BEAN_SERVICE_RENAME_TACTIC);
 		}
 		
-		T service = (T) RapidContext.getBean(nameBean.toString());
+		T service = (T) context.getBean(nameBean.toString());
 		
 		return service; 
 	}
@@ -43,7 +48,7 @@ public class FactoryService {
 	public RenameContractService getRanameContract(){
 		return 
 //				getServiceRename2();
-				(RenameContractService) RapidContext.getBean(Constant.BEAN_SERVICE_RENAME);
+				(RenameContractService) context.getBean(Constant.BEAN_SERVICE_RENAME);
 	}
 	
 }

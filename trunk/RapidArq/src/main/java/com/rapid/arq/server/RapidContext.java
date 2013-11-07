@@ -1,8 +1,9 @@
 package com.rapid.arq.server;
 
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Controller;
 
 /**
  * 
@@ -10,6 +11,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  */
 
+@Controller
+@Configuration 
 public class RapidContext {
 
 	private static ApplicationContext context =  null;
@@ -23,7 +26,7 @@ public class RapidContext {
 		}
 	}
 	
-	public static Object getBean(String nameBean) {
+	public Object getBean(String nameBean) {
 		
 		
 		return context.getBean(nameBean);

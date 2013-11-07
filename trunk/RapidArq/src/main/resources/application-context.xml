@@ -10,13 +10,13 @@
  	
 	
 	<context:component-scan base-package="com.rapid.arq.server" />
- 
-    <bean id="RapidContext" class="com.rapid.arq.server.RapidContext"/>
+ 	<bean id="RapidContext" class="com.rapid.arq.server.RapidContext"/>
+    <bean id="FactoryService" class="com.rapid.arq.server.FactoryService"/>
 	<bean id="ServiceRenameStrategy" class="com.rapid.arq.server.service.impl.RenameContractStrategyServiceImpl"/> 		 	
  	<bean id="ServiceRenameTactic" class="com.rapid.arq.server.service.impl.RenameContractTacticServiceImpl"/>
  	
  
- 	<bean id="ServiceRename" factory-bean="com.rapid.arq.server.RapidContext" factory-method="getRename" />
+ 	<bean id="ServiceRename" factory-bean="FactoryService" factory-method="getRename" />
  	
  	
 	
