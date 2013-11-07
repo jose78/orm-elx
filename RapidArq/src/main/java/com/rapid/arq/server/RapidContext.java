@@ -24,6 +24,8 @@ public class RapidContext {
 	}
 	
 	public static Object getBean(String nameBean) {
+		
+		
 		return context.getBean(nameBean);
 	}	
 }
