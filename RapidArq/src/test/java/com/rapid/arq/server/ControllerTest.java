@@ -14,13 +14,23 @@ import com.rapid.arq.server.service.RenameContractService;
 public class ControllerTest {
 	
 	@Autowired
-	private FactoryService factoryService;
+	private FactoryService factoryService22;
 	
 	@Test
 	public void testRename() throws Exception {
 		
-		RenameContractService service =factoryService.getRanameContract();
-		service.renameContract(null);
+		RenameContractService service =factoryService22.getRanameContract();
+		factoryService22.getRanameContract().renameContract(null);
+		factoryService22.getRanameContract().renameContract(null);
+		factoryService22.getRanameContract().renameContract(null);
+		factoryService22.getRanameContract().renameContract(null);
+		factoryService22.getRanameContract().renameContract(null);
+		factoryService22.getRanameContract().renameContract(null);factoryService22.getRanameContract().renameContract(null);
+		factoryService22.getRanameContract().renameContract(null);factoryService22.getRanameContract().renameContract(null);
+		factoryService22.getRanameContract().renameContract(null);factoryService22.getRanameContract().renameContract(null);
+		factoryService22.getRanameContract().renameContract(null);factoryService22.getRanameContract().renameContract(null);
+		factoryService22.getRanameContract().renameContract(null);factoryService22.getRanameContract().renameContract(null);
+		factoryService22.getRanameContract().renameContract(null);
 		
 	}		
 }

@@ -20,7 +20,7 @@ public class FactoryService {
 	}
 	
 	private Boolean isStrategy(){
-		return strategy;
+		return strategy= (!strategy);
 	}
 
 	
@@ -29,9 +29,10 @@ public class FactoryService {
 	}
 	
 	
+	
 	@SuppressWarnings("unchecked")
 	private  <T> T getRename(){
-		boolean isStrategy= false;
+		boolean isStrategy= isStrategy();
 		StringBuilder nameBean= new StringBuilder();
 		if(isStrategy){
 			nameBean.append(Constant.BEAN_SERVICE_RENAME_STRATEGY);			
@@ -46,9 +47,7 @@ public class FactoryService {
 	
 	
 	public RenameContractService getRanameContract(){
-		return 
-//				getServiceRename2();
-				(RenameContractService) context.getBean(Constant.BEAN_SERVICE_RENAME);
+		return getRename();
 	}
 	
 }
