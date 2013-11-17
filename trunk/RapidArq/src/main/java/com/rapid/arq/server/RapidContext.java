@@ -16,6 +16,10 @@ public class RapidContext {
 	@Autowired
 	private ApplicationContext appContext;
 
+	public void setAppContext(ApplicationContext appContext) {
+		this.appContext = appContext;
+	}
+	
 	public Object getBean(String nameBean) {		
 		return appContext.getBean(nameBean);
 	}

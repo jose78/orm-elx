@@ -1,53 +1,41 @@
 package com.rapid.arq.server;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.rapid.arq.server.service.RenameContractService;
+import com.rapid.arq.server.util.BuilderSessionInformation;
 import com.rapid.arq.server.util.Constant;
 
+@Scope(value = BeanDefinition.SCOPE_PROTOTYPE)
 @Component
 public class FactoryService {
-	
+
 	@Autowired
 	private RapidContext context;
-	
-	
-	private boolean  strategy = false; 
-	
-	public void setStrategy(boolean strategy) {
-		this.strategy = strategy;
-	}
-	
-	private Boolean isStrategy(){
-		return strategy= (!strategy);
+	@Autowired
+	private BuilderSessionInformation builderSessionInformation;
+
+	public RenameContractService getRanameContract() {
+		try {
+			boolean isStrategy = builderSessionInformation.isStrategy();
+			StringBuilder nameBean = new StringBuilder();
+			if (isStrategy) {
+				nameBean.append(Constant.BEAN_SERVICE_RENAME_STRATEGY);
+			} else {
+				nameBean.append(Constant.BEAN_SERVICE_RENAME_TACTIC);
+			}
+
+			RenameContractService service = (RenameContractService) context
+					.getBean(nameBean.toString());
+
+			return service;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
-	
-	public boolean executeDetectoTypeUser(){
-		return true;
-	}
-	
-	
-	
-	@SuppressWarnings("unchecked")
-	private  <T> T getRename(){
-		boolean isStrategy= isStrategy();
-		StringBuilder nameBean= new StringBuilder();
-		if(isStrategy){
-			nameBean.append(Constant.BEAN_SERVICE_RENAME_STRATEGY);			
-		}else{
-			nameBean.append(Constant.BEAN_SERVICE_RENAME_TACTIC);
-		}
-		
-		T service = (T) context.getBean(nameBean.toString());
-		
-		return service; 
-	}
-	
-	
-	public RenameContractService getRanameContract(){
-		return getRename();
-	}
-	
 }
