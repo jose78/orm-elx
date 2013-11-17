@@ -7,11 +7,15 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.rapid.arq.server.service.RenameContractService;
+import com.spring.service.MyServiceImpl;
 
 //@Configurable(autowire=Autowire.BY_TYPE)
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:application-context.xml"})
 public class ControllerTest {
+	
+	@Autowired
+	private MyServiceImpl serviceImpl;
 	
 	@Autowired
 	private FactoryService factoryService22;
@@ -33,4 +37,14 @@ public class ControllerTest {
 		factoryService22.getRanameContract().renameContract(null);
 		
 	}		
+	
+	@Test
+	public void testService() throws Exception {
+		System.out.println(serviceImpl.getRepository() + serviceImpl.getRepositoryStr());
+		System.out.println(serviceImpl.getRepository() + serviceImpl.getRepositoryStr());
+		System.out.println(serviceImpl.getRepository() + serviceImpl.getRepositoryStr());
+		System.out.println(serviceImpl.getRepository() + serviceImpl.getRepositoryStr());
+		
+	}
+	
 }
